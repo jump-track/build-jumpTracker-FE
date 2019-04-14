@@ -1,3 +1,11 @@
 h1 {
   text-align: center;
 }
+.navLinks a {
+  margin-left: 5%;
+  text-decoration: none;
+}
+.navLinks {
+  text-align: right;
+  margin: 3% 10% 0 0;
+}
