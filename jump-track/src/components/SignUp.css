@@ -1,0 +1,17 @@
+input {
+  width: 16%;
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 1%;
+  text-align: center;
+  border-radius: 10px;
+}
+button {
+  width: 8%;
+  height: 25px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+form {
+  text-align: center;
+}
