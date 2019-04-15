@@ -1,0 +1,27 @@
+.goalsDiv {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.innerGoalsDiv {
+  margin-left: 2%;
+  padding: 1%;
+  background: gray;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
+button {
+  width: 30%;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 10px;
+  color: rgb(31, 29, 29);
+  border-radius: 10px;
+}
+h2 {
+  color: gray;
+  text-align: center;
+  margin-top: 5%;
+}
