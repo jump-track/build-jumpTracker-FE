@@ -1,7 +1,9 @@
 h1 {
   margin-top: 10%;
+  color: gray;
 }
 p {
   margin: 0 20% 0 20%;
   opacity: 0.6;
+  color: white;
 }

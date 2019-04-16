@@ -9,6 +9,10 @@ class Goals extends React.Component {
   componentDidMount() {
     this.props.getData();
   }
+
+  handleClick = () => {
+    this.props.history.push("/exercises");
+  };
   render() {
     return (
       <div>
@@ -16,7 +20,11 @@ class Goals extends React.Component {
         <div className="goalsDiv">
           {this.props.goals &&
             this.props.goals.map(item => (
-              <div className="innerGoalsDiv" key={item.id}>
+              <div
+                className="innerGoalsDiv"
+                key={item.id}
+                onClick={this.handleClick}
+              >
                 <h5>Name: {item.username}</h5>
                 <h5>City: {item.address.city}</h5>
                 <button>Delete</button>
