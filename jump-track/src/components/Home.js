@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="homeDiv">
       <h1>Jump Starter</h1>
       <p>
         There are many variations of passages of Lorem Ipsum available, but the

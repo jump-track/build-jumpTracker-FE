@@ -2,7 +2,7 @@ import React from "react";
 import "./Goals.css";
 
 const Goal = props => {
-  console.log("props", props.goals);
+  // console.log("props", props.goals);
   return (
     <div>
       <h2>Goals Component</h2>
@@ -13,8 +13,9 @@ const Goal = props => {
               <h5>Jump-Height: {item.jumpHeight}</h5>
               <h5>Start-Date: {item.startDate}</h5>
               <h5>Target-Date: {item.targetDate}</h5>
-              <h5>Completed-Date: {item.completed}</h5>
-              <button>Delete</button>
+              <button onClick={() => props.handleDelete(props.goals.id)}>
+                Delete
+              </button>
             </div>
           ))}
       </div>

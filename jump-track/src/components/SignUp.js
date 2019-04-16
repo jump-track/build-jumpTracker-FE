@@ -32,7 +32,7 @@ class SignUp extends React.Component {
           <FormGroup>
             <Label for="exampleEmail">Height</Label>
             <Input
-              type="text"
+              type="number"
               value={height}
               name="height"
               onChange={handleChange}
@@ -42,7 +42,7 @@ class SignUp extends React.Component {
           <FormGroup>
             <Label for="exampleEmail">Jump Height</Label>
             <Input
-              type="text"
+              type="number"
               value={jumpHeight}
               name="jumpHeight"
               onChange={handleChange}

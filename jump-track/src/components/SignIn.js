@@ -4,11 +4,11 @@ import "./SignUp.css";
 
 const SignIn = props => {
   const { username, password } = props;
-  const { handleChange } = props;
+  const { handleChange, handleLogInSubmit } = props;
 
   return (
     <div>
-      <form className="form">
+      <form onSubmit={handleLogInSubmit} className="form">
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
           <Input
