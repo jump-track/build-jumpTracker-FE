@@ -8,8 +8,8 @@ export const register = obj => dispatch => {
   return axios
     .post("https://jump-tracker.herokuapp.com/users/register", obj)
     .then(res => {
-      localStorage.setItem("token", res.data.payload);
-      dispatch({ type: REGISTER_SUCCESS, payload: res.data.payload });
+      localStorage.setItem("token", res.data);
+      dispatch({ type: REGISTER_SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
 };

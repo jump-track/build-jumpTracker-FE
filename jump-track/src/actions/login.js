@@ -9,7 +9,7 @@ export const login = creds => dispatch => {
     .post("https://jump-tracker.herokuapp.com/users/login", creds)
     .then(res => {
       localStorage.setItem("token", res.data.payload);
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload });
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
 };
