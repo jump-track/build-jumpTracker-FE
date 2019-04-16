@@ -1,7 +1,9 @@
 import React from "react";
 import "./Goals.css";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Goal = props => {
+const Goals = props => {
   // console.log("props", props.goals);
   return (
     <div>
@@ -23,4 +25,13 @@ const Goal = props => {
   );
 };
 
-export default Goal;
+const mapStateToProps = ({ goals }) => ({
+  goals
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {}
+  )(Goals)
+);

@@ -1,11 +1,37 @@
 import React from "react";
 import { Button, FormGroup, Label, Input } from "reactstrap";
-import "./SignUp.css";
+import "./Register.css";
+import { register } from "../actions";
+import { connect } from "react-redux";
 
-class SignUp extends React.Component {
+class Register extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+      height: undefined,
+      jumpHeight: undefined
+    };
+  }
+
+  handleChange = e => {
+    this.setState({
+      ...this.state,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  register = e => {
+    e.preventDefault();
+    this.props.register(this.state).then(() => {
+      this.props.history.push("/login");
+    });
+  };
+
   render() {
-    const { username, password, height, jumpHeight } = this.props;
-    const { handleChange, handleSubmit } = this.props;
+    const { username, password, height, jumpHeight } = this.state;
+    const { handleChange, handleSubmit } = this;
     return (
       <div>
         <form onSubmit={handleSubmit} className="form">
@@ -56,4 +82,12 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = ({ signingUp, error }) => ({
+  error,
+  signingUp
+});
+
+export default connect(
+  mapStateToProps,
+  { register }
+)(Register);
