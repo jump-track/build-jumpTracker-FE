@@ -8,7 +8,6 @@ export const exerciseGet = goalID => dispatch => {
   axiosAuth()
     .get(`https://jump-tracker.herokuapp.com/exercises/${goalID}`)
     .then(res => {
-      console.log("exercise", res);
       dispatch({ type: EXERCISE_GET_SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
