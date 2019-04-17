@@ -2,7 +2,7 @@ import React from "react";
 import { Button, FormGroup, Label, Input } from "reactstrap";
 import "./Exercises.css";
 import { connect } from "react-redux";
-import { exercise } from "../actions";
+import { exercise, exerciseGet } from "../actions";
 
 class Exercises extends React.Component {
   constructor(props) {
@@ -17,6 +17,10 @@ class Exercises extends React.Component {
       [e.target.name]: e.target.value
     });
   };
+
+  componentDidMount() {
+    this.props.exerciseGet(this.props.match.params.id);
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -59,5 +63,5 @@ const mapStateToProps = ({ updatingExercise, error, goals }) => ({
 
 export default connect(
   mapStateToProps,
-  { exercise }
+  { exercise, exerciseGet }
 )(Exercises);

@@ -32,3 +32,9 @@ export {
   EXERCISE_FAILURE,
   exercise
 } from "./exercise";
+export {
+  EXERCISE_GET_START,
+  EXERCISE_GET_SUCCESS,
+  EXERCISE_GET_FAILURE,
+  exerciseGet
+} from "./exerciseGet";

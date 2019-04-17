@@ -19,7 +19,10 @@ import {
   COMPLETED_FAILURE,
   EXERCISE_START,
   EXERCISE_SUCCESS,
-  EXERCISE_FAILURE
+  EXERCISE_FAILURE,
+  EXERCISE_GET_START,
+  EXERCISE_GET_SUCCESS,
+  EXERCISE_GET_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -31,7 +34,8 @@ const initialState = {
   postingData: false,
   deletingGoal: false,
   completing: false,
-  updatingExercise: false
+  updatingExercise: false,
+  gettingExercise: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -101,6 +105,24 @@ const reducer = (state = initialState, action) => {
         goals: [...action.payload]
       };
     case EXERCISE_FAILURE:
+      return {
+        ...state,
+        error: "try again"
+      };
+    case EXERCISE_GET_START:
+      return {
+        ...state,
+        error: "",
+        gettingExercise: true
+      };
+    case EXERCISE_GET_START:
+      return {
+        ...state,
+        error: "",
+        gettingExercise: false,
+        goals: [...action.payload]
+      };
+    case EXERCISE_GET_FAILURE:
       return {
         ...state,
         error: "try again"
