@@ -24,7 +24,6 @@ class Exercises extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log("goalsID", this.props.match.params.id);
     const modifiedObj = {
       exercises: this.state.exercise
     };
@@ -32,10 +31,18 @@ class Exercises extends React.Component {
   };
 
   render() {
+    // console.log("exercise", this.props.goals);
     const { exercise } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
       <div>
+        {this.props.goals.map(item => (
+          <section className="exercises">
+            <h3 className="exerciseh3">{item.exercises}</h3>{" "}
+            <h3 className="exerciseh3">{item.date}</h3>
+          </section>
+        ))}
+
         <form onSubmit={e => handleSubmit(e)} className="form">
           <FormGroup>
             <Label for="exampleEmail">Exercise</Label>

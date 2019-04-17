@@ -12,3 +12,11 @@ input {
   /* margin-left: 5%; */
   /* text-align: center; */
 }
+
+.exercises {
+  display: flex;
+  padding: 1%;
+  background: lightgray;
+}
+.exerciseh3 {
+}
