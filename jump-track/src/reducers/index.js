@@ -115,7 +115,7 @@ const reducer = (state = initialState, action) => {
         error: "",
         gettingExercise: true
       };
-    case EXERCISE_GET_START:
+    case EXERCISE_GET_SUCCESS:
       return {
         ...state,
         error: "",
