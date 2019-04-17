@@ -8,6 +8,7 @@ input {
 }
 
 .form {
-  margin-top: 5%;
-  margin-left: 5%;
+  margin-top: 5% auto;
+  /* margin-left: 5%; */
+  /* text-align: center; */
 }

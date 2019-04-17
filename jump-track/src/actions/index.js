@@ -1,3 +1,5 @@
+import { EXERCISE_START } from "./exercise";
+
 export { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, login } from "./login";
 export {
   REGISTER_START,
@@ -12,3 +14,21 @@ export {
   getData
 } from "./users";
 export { POST_START, POST_SUCCESS, POST_FAILURE, post } from "./post";
+export {
+  DELETE_START,
+  DELETE_SUCCESS,
+  DELETE_FAILURE,
+  deleteGoal
+} from "./delete";
+export {
+  COMPLETED_START,
+  COMPLETED_SUCCESS,
+  COMPLETED_FAILURE,
+  completed
+} from "./completed";
+export {
+  EXERCISE_START,
+  EXERCISE_SUCCESS,
+  EXERCISE_FAILURE,
+  exercise
+} from "./exercise";

@@ -10,7 +10,16 @@ import {
   FETCH_DATA_FAILURE,
   POST_START,
   POST_SUCCESS,
-  POST_FAILURE
+  POST_FAILURE,
+  DELETE_START,
+  DELETE_SUCCESS,
+  DELETE_FAILURE,
+  COMPLETED_START,
+  COMPLETED_SUCCESS,
+  COMPLETED_FAILURE,
+  EXERCISE_START,
+  EXERCISE_SUCCESS,
+  EXERCISE_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -19,7 +28,10 @@ const initialState = {
   loggingIn: false,
   signingUp: false,
   fetchingData: false,
-  postingData: false
+  postingData: false,
+  deletingGoal: false,
+  completing: false,
+  updatingExercise: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -54,6 +66,59 @@ const reducer = (state = initialState, action) => {
         goals: [...action.payload]
       };
     case FETCH_DATA_FAILURE:
+      return {
+        ...state,
+        error: "try again"
+      };
+    case COMPLETED_START:
+      return {
+        ...state,
+        error: "",
+        completing: true
+      };
+    case COMPLETED_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        goals: [...action.payload]
+      };
+    case COMPLETED_FAILURE:
+      return {
+        ...state,
+        error: "try again"
+      };
+    case EXERCISE_START:
+      return {
+        ...state,
+        error: "",
+        updatingExercise: true
+      };
+    case EXERCISE_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        updatingExercise: false,
+        goals: [...action.payload]
+      };
+    case EXERCISE_FAILURE:
+      return {
+        ...state,
+        error: "try again"
+      };
+    case DELETE_START:
+      return {
+        ...state,
+        error: "",
+        deletingGoal: true
+      };
+    case DELETE_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        goals: [...action.payload],
+        deletingGoal: false
+      };
+    case DELETE_FAILURE:
       return {
         ...state,
         error: "try again"

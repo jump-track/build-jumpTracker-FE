@@ -20,7 +20,7 @@ input {
 h2 {
   margin-left: 5%;
 }
-.goalsh3 {
+.goalsInProgress {
   border: 1px solid gray;
   background: gray;
   padding: 1%;
@@ -34,11 +34,14 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.goalsh3 button {
+.goalsInProgress button {
   margin-left: 15%;
   background: lightslategray;
   border-radius: 10px;
 }
-.goalsh3 h3 {
+.goalsInProgress h3 {
   text-align: center;
+}
+.goalsCompleted {
+  text-decoration: line-through;
 }

@@ -1,16 +1,16 @@
 import React from "react";
 import { Button, FormGroup, Label, Input } from "reactstrap";
 import "./Exercises.css";
+import { connect } from "react-redux";
+import { exercise } from "../actions";
 
 class Exercises extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      exercise: "",
-      target: undefined
+      exercise: ""
     };
   }
-
   handleChange = e => {
     this.setState({
       ...this.state,
@@ -20,22 +20,19 @@ class Exercises extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({
-      exercise: this.state.exercise,
-      target: parseInt(this.state.target, 10)
-    });
+    console.log("goalsID", this.props.match.params.id);
+    const modifiedObj = {
+      exercises: this.state.exercise
+    };
+    this.props.exercise(this.props.match.params.id, modifiedObj);
   };
 
   render() {
-    const { exercise, target } = this.state;
+    const { exercise } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
       <div>
-        <div style={{ textAlign: "center" }}>
-          <h2>{this.state.exercise}</h2>
-          <h3>{this.state.target}</h3>
-        </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)} className="form">
           <FormGroup>
             <Label for="exampleEmail">Exercise</Label>
             <Input
@@ -46,16 +43,7 @@ class Exercises extends React.Component {
               placeholder="enter exercise"
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleEmail">Target</Label>
-            <Input
-              type="number"
-              value={target}
-              name="target"
-              onChange={handleChange}
-              placeholder="enter target in weeks"
-            />
-          </FormGroup>
+
           <Button className="signBtn">Update</Button>
         </form>
       </div>
@@ -63,4 +51,13 @@ class Exercises extends React.Component {
   }
 }
 
-export default Exercises;
+const mapStateToProps = ({ updatingExercise, error, goals }) => ({
+  error,
+  updatingExercise,
+  goals
+});
+
+export default connect(
+  mapStateToProps,
+  { exercise }
+)(Exercises);
