@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import { Button, FormGroup, Label, Input } from "reactstrap";
 import { connect } from "react-redux";
 import { getData, post, deleteGoal, completed } from "../actions";
+import Graph from './Graph';
 import "./Goals.css";
 
 class Goals extends React.Component {
@@ -57,6 +58,7 @@ class Goals extends React.Component {
     return (
       <div>
         <h2>Set your Goals</h2>
+        <Graph />
         <div className="goals">
           {this.props.goals &&
             this.props.goals.map(goal => (
