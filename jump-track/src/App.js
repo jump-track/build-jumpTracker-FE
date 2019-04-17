@@ -15,6 +15,7 @@ class App extends Component {
         <div className="App">
           <div className="navLinks">
             <NavLink exact to="/">
+              {" "}
               Home
             </NavLink>
             <NavLink to="/protected">Goals</NavLink>

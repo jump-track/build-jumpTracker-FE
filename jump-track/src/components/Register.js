@@ -10,8 +10,8 @@ class Register extends React.Component {
     this.state = {
       username: "",
       password: "",
-      height: undefined,
-      jumpHeight: undefined
+      height: undefined || 0,
+      jumpHeight: undefined || 0
     };
   }
 
@@ -24,17 +24,24 @@ class Register extends React.Component {
 
   register = e => {
     e.preventDefault();
-    this.props.register(this.state).then(() => {
+    let stateObj = this.state;
+    stateObj.height = parseInt(this.state.height, 10);
+    stateObj.jumpHeight = parseInt(this.state.jumpHeight, 10);
+    this.props.register(stateObj).then(() => {
       this.props.history.push("/login");
     });
   };
 
+  // logOut = () => {
+  //   localStorage.removeItem("token");
+  // };
+
   render() {
     const { username, password, height, jumpHeight } = this.state;
-    const { handleChange, handleSubmit } = this;
+    const { handleChange } = this;
     return (
       <div>
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={this.register} className="form">
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input

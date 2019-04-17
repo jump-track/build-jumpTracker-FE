@@ -7,7 +7,10 @@ import {
   REGISTER_FAILURE,
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
-  FETCH_DATA_FAILURE
+  FETCH_DATA_FAILURE,
+  POST_START,
+  POST_SUCCESS,
+  POST_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -15,11 +18,29 @@ const initialState = {
   goals: [],
   loggingIn: false,
   signingUp: false,
-  fetchingData: false
+  fetchingData: false,
+  postingData: false
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case POST_START:
+      return {
+        ...state,
+        error: "",
+        posting: true
+      };
+    case POST_SUCCESS:
+      return {
+        ...state,
+        goals: [...action.payload],
+        posting: false
+      };
+    case POST_FAILURE:
+      return {
+        ...state,
+        error: "try again"
+      };
     case FETCH_DATA_START:
       return {
         ...state,

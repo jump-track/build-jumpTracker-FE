@@ -7,28 +7,34 @@ class Exercises extends React.Component {
     super(props);
     this.state = {
       exercise: "",
-      date: undefined
+      target: undefined
     };
   }
 
   handleChange = e => {
     this.setState({
+      ...this.state,
       [e.target.name]: e.target.value
     });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log("submit");
+    this.setState({
+      exercise: this.state.exercise,
+      target: parseInt(this.state.target, 10)
+    });
   };
 
   render() {
-    const { exercise, date } = this.state;
+    const { exercise, target } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
       <div>
-        <h2>{this.props.phone}</h2>
-        <h3>{this.props.website}</h3>
+        <div style={{ textAlign: "center" }}>
+          <h2>{this.state.exercise}</h2>
+          <h3>{this.state.target}</h3>
+        </div>
         <form onSubmit={handleSubmit}>
           <FormGroup>
             <Label for="exampleEmail">Exercise</Label>
@@ -44,10 +50,10 @@ class Exercises extends React.Component {
             <Label for="exampleEmail">Target</Label>
             <Input
               type="number"
-              value={date}
-              name="date"
+              value={target}
+              name="target"
               onChange={handleChange}
-              placeholder="enter date"
+              placeholder="enter target in weeks"
             />
           </FormGroup>
           <Button className="signBtn">Update</Button>

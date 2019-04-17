@@ -11,3 +11,4 @@ export {
   FETCH_DATA_FAILURE,
   getData
 } from "./users";
+export { POST_START, POST_SUCCESS, POST_FAILURE, post } from "./post";

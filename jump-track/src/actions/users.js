@@ -7,9 +7,8 @@ export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA_START });
 
   axiosWithAuth()
-    .get("https://jsonplaceholder.typicode.com/users")
+    .get("https://jump-tracker.herokuapp.com/goals/")
     .then(res => {
-      console.log(res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {

@@ -1,29 +1,44 @@
-.goalsDiv {
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%;
-}
-.innerGoalsDiv {
-  margin-left: 2%;
-  margin-top: 2%;
-  padding: 1%;
-  background: gray;
-  opacity: 0.6;
-  text-align: center;
-  color: white;
+input {
+  max-width: 16%;
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 1%;
   border-radius: 10px;
+  margin-left: 5%;
+  background: lightslategray;
 }
-button {
-  width: 30%;
-  height: 35px;
+.signBtn {
+  width: 8%;
+  height: 45px;
   font-size: 16px;
   border-radius: 10px;
-  color: rgb(31, 29, 29);
-  border-radius: 10px;
+}
+.form {
+  margin-top: 5%;
+  margin-left: 5%;
 }
 h2 {
-  color: gray;
+  margin-left: 5%;
+}
+.goalsh3 {
+  border: 1px solid gray;
+  background: gray;
+  padding: 1%;
+  width: 20%;
+  margin: 2% 0 0 1%;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+.goals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.goalsh3 button {
+  margin-left: 15%;
+  background: lightslategray;
+  border-radius: 10px;
+}
+.goalsh3 h3 {
   text-align: center;
-  margin-top: 5%;
 }

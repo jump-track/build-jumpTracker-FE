@@ -8,7 +8,7 @@ export const login = creds => dispatch => {
   return axios
     .post("https://jump-tracker.herokuapp.com/users/login", creds)
     .then(res => {
-      localStorage.setItem("token", res.data.payload);
+      localStorage.setItem("token", res.data);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
