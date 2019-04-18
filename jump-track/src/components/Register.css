@@ -1,3 +1,24 @@
 input {
   width: 50%;
 }
+.container {
+  display: flex;
+  justify-content: center;
+}
+.iYygab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 50vw;
+  height: auto;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.811);
+  border-radius: 25px;
+  border: 2px solid rgb(243, 131, 4);
+  padding: 10% 0;
+}
+.btn {
+  width: 50%;
+  margin: 5% 0;
+}
