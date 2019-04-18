@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://images.pexels.com/photos/1619541/pexels-photo-1619541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.unsplash.com/photo-1499852848443-3004d6dc4cfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10,12 +10,21 @@ h1 {
 .navLinks a {
   margin-left: 5%;
   text-decoration: none;
-  color: gray;
-  font-size: 20px;
+  color: rgb(243, 131, 4);
+  font-size: 2em;
 }
 .navLinks {
+  animation-name: text-focus-in;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
   text-align: right;
-  margin: 1% 10% 0 0;
+  background: rgba(0, 0, 0, 0.811);
+  padding-right: 15%;
+  width: 110%;
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+  border-radius: 25px;
+  border: 2px solid rgb(243, 131, 4);
 }
 .appDiv {
   float: right;

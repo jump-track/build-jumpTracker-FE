@@ -11,21 +11,23 @@ const Home = () => {
           width="50"
           height="50"
         />{" "}
-        <h1>Jump Starter</h1>
+        <h1>Jump Tracker</h1>
       </section>
       <p>
-        There are many variations of passages of Lorem Ipsum available, but the
-        majority have suffered alteration in some form, by injected humour, or
-        randomized words which don't look even slightly believable. If you are
-        going to use a passage of Lorem Ipsum, you need to be sure there isn't
-        anything embarrassing hidden in the middle of text. All the Lorem Ipsum
-        generators on the Internet tend to repeat predefined chunks as
-        necessary, making this the first true generator on the Internet. It uses
-        a dictionary of over 200 Latin words, combined with a handful of model
-        sentence structures, to generate Lorem Ipsum which looks reasonable. The
-        generated Lorem Ipsum is therefore always free from repetition, injected
-        humour, or non-characteristic words etc.
+          Welcome to the Jump Tracker application. Jumping is one athletic movement that can greatly effect your game, for better or worse. With a specialized training regiment
+          YOU can improve your jumping height and or distance. This requires sheer force of will combined with 100% commitment. There 
+          are going to be alot of obstacles in your way. We all want to have some type of gratification when we truly apply ourselves
+          to a goal. Documenting the information for jumping can be frustrating. You find a great jumping exercise regime here and there,
+          but not at the same place and time. What about documenting the benchmark you started your exercise program at? Recording the data
+          can not only be difficult, but also unrewarding. This can cause us mentally to feel ungratified with our efforts.
       </p>
+      <p>
+          Enter the world of technology. Have you ever noticed how your life is streamlined by technology. It can encompass your life, both leading
+          you in the direction you intended, or leave you lost in the wilderness. This is a fine line. With our technologic application, 
+          we give you access to enhancing your life's endeavors to jump higher. We want you to "JUMP" past your goals, and help you along the whole way.
+          The foreshadowed issues above are easily handled wiht this application. Please...
+      </p>
+        <h2>Log In or Register today!</h2>
     </div>
   );
 };

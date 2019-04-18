@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const InInput = styled.input`
-  width: 20%;
+  width: 25vw;
   height: 40px;
   background: lightblue;
   opacity: 0.5;
@@ -64,7 +64,7 @@ class Register extends React.Component {
     const { username, password, height, jumpHeight } = this.state;
     const { handleChange } = this;
     return (
-      <div>
+      <div class="container">
         <FormRegister onSubmit={this.register}>
           <FormGroup>
             <InInput
