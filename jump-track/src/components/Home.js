@@ -4,7 +4,15 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="homeDiv">
-      <h1>Jump Starter</h1>
+      <section className="homeFlex">
+        <img
+          src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
+          alt="drawing"
+          width="50"
+          height="50"
+        />{" "}
+        <h1>Jump Starter</h1>
+      </section>
       <p>
         There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or

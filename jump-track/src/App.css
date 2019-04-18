@@ -17,3 +17,9 @@ h1 {
   text-align: right;
   margin: 1% 10% 0 0;
 }
+.appDiv {
+  float: right;
+}
+.App {
+  box-sizing: border-box;
+}

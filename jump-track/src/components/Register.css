@@ -1,18 +1,3 @@
 input {
-  max-width: 16%;
-  height: 25px;
-  font-size: 16px;
-  margin-bottom: 1%;
-  border-radius: 10px;
-  margin-left: 5%;
-}
-.signBtn {
-  width: 8%;
-  height: 45px;
-  font-size: 16px;
-  border-radius: 10px;
-}
-.form {
-  margin-top: 5%;
-  margin-left: 5%;
+  width: 50%;
 }

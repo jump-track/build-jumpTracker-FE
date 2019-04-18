@@ -9,6 +9,9 @@ import PrivateRoute from "./components/PrivateRoute";
 import Exercises from "./components/Exercises";
 
 class App extends Component {
+  handleClick = () => {
+    localStorage.removeItem("token");
+  };
   render() {
     return (
       <Router>
@@ -20,6 +23,12 @@ class App extends Component {
             </NavLink>
             <NavLink to="/protected">Goals</NavLink>
             <NavLink to="/register">Register</NavLink>
+            <NavLink to="/logIn">Log In</NavLink>
+            <NavLink to="/">
+              <div className="appDiv" onClick={this.handleClick}>
+                Log out
+              </div>
+            </NavLink>
           </div>
           <Route exact path="/" component={Home} />
           <Route path="/logIn" component={LogIn} />

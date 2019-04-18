@@ -1,28 +1,30 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
-import c3 from 'c3';
+import c3 from "c3";
 
 class Graph extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       c3.generate({
-        bindto: '#chart',
+        bindto: "#chart",
         data: {
-          columns: [
-            ['Jump Height Progression', ...this.props.goals],
-          ]
+          columns: [["Jump Height Progression", ...this.props.goals]]
         }
       });
     }, 500);
   }
   render() {
     return (
-      <div id="chart" style={{
-        heigth: "200px",
-        width: "600px",
-        background: "white",
-      }}></div>
-    )
+      <div
+        id="chart"
+        style={{
+          heigth: "200px",
+          width: "600px",
+          background: "lightBlue",
+          opacity: 0.4
+        }}
+      />
+    );
   }
 }
 

@@ -1,9 +1,15 @@
 h1 {
   margin-top: 10%;
+  margin-left: 3%;
   color: gray;
 }
 p {
   margin: 0 20% 0 20%;
   opacity: 0.6;
   color: white;
+}
+.homeFlex {
+  margin: 2% 0;
+  display: flex;
+  justify-content: center;
 }

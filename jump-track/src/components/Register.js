@@ -3,7 +3,19 @@ import { Button, FormGroup, Label, Input } from "reactstrap";
 import "./Register.css";
 import { register } from "../actions";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
+const InInput = styled.input`
+  width: 20%;
+  height: 40px;
+  background: lightblue;
+  opacity: 0.5;
+`;
+
+const FormRegister = styled.form`
+  margin: 3% 0 0 3%;
+  text-align: center;
+`;
 class Register extends React.Component {
   constructor() {
     super();
@@ -20,6 +32,18 @@ class Register extends React.Component {
       ...this.state,
       [e.target.name]: e.target.value
     });
+  };
+
+  isValid = () => {
+    if (
+      this.state.username === "" ||
+      this.state.password === "" ||
+      this.state.height <= 0 ||
+      this.state.jumpHeight <= 0
+    ) {
+      return false;
+    }
+    return true;
   };
 
   register = e => {
@@ -41,10 +65,10 @@ class Register extends React.Component {
     const { handleChange } = this;
     return (
       <div>
-        <form onSubmit={this.register} className="form">
+        <FormRegister onSubmit={this.register}>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
-            <Input
+            <InInput
+              size="lg"
               type="text"
               value={username}
               name="username"
@@ -53,8 +77,8 @@ class Register extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleEmail">Password</Label>
-            <Input
+            <InInput
+              size="lg"
               type="text"
               value={password}
               name="password"
@@ -63,8 +87,8 @@ class Register extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleEmail">Height</Label>
-            <Input
+            <InInput
+              size="lg"
               type="number"
               value={height}
               name="height"
@@ -73,8 +97,8 @@ class Register extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleEmail">Jump Height</Label>
-            <Input
+            <InInput
+              size="lg"
               type="number"
               value={jumpHeight}
               name="jumpHeight"
@@ -82,8 +106,10 @@ class Register extends React.Component {
               placeholder="enter your jump-height"
             />
           </FormGroup>
-          <Button className="signBtn">Submit</Button>
-        </form>
+          <Button disabled={!this.isValid()} size="lg" color="primary">
+            Submit
+          </Button>
+        </FormRegister>
       </div>
     );
   }
