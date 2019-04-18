@@ -3,8 +3,8 @@ import "./Goals.css";
 import { withRouter, Link } from "react-router-dom";
 import { Button, FormGroup, Label, Input } from "reactstrap";
 import { connect } from "react-redux";
-import { getData, post, deleteGoal, completed } from "../actions";
 import Graph from "./Graph";
+import { getData, post, deleteGoal, completed } from "../actions";
 import "./Goals.css";
 
 class Goals extends React.Component {
