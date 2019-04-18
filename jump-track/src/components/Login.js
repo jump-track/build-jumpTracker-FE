@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormGroup, Label, Input } from "reactstrap";
+import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 import styled from "styled-components";

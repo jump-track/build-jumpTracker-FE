@@ -1,7 +1,7 @@
 import React from "react";
 import "./Goals.css";
 import { withRouter, Link } from "react-router-dom";
-import { Button, FormGroup, Label, Input } from "reactstrap";
+import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
 import Graph from "./Graph";
 import { getData, post, deleteGoal, completed } from "../actions";
@@ -27,7 +27,6 @@ const TButton = styled.button`
 const GoalsFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 20%;
 `;
 
 const GoalsUpper = styled.div`
@@ -78,16 +77,14 @@ class Goals extends React.Component {
   };
 
   checked = goal => {
-    const goalBool = goal.completed === "false" ? false : true;
-
-    console.log("goal1", goal);
-    goal.completed = !goalBool;
+    // console.log("goal1", goal);
+    goal.completed = !goal.completed;
     // goal.completed = !goal.completed;
-    console.log("goal2", goal);
+    // console.log("goal2", goal);
     this.props.completed(goal);
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 2000);
   };
 
   delete = id => {
@@ -124,17 +121,28 @@ class Goals extends React.Component {
         </GoalsUpper>
         <GoalsFlex>
           {this.props.goals &&
-            this.props.goals.map(goal => (
-              <GoalsLower>
-                <h3>
-                  {goal.jump_height} cm{" "}
-                  <ISpan onClick={() => this.checked(goal)}>
-                    {" "}
-                    <i className="fas fa-check" />
-                  </ISpan>
-                </h3>
+            this.props.goals.reverse().map(goal => (
+              <GoalsLower key={goal.id}>
+                {goal.completed ? (
+                  <h3 style={{ textDecoration: "line-through" }}>
+                    {goal.jump_height}
+                  </h3>
+                ) : (
+                  <h3 style={{ textDecoration: "none" }}>{goal.jump_height}</h3>
+                )}
 
-                <h3>{goal.target_date}</h3>
+                <ISpan onClick={() => this.checked(goal)}>
+                  {" "}
+                  <i className="fas fa-check" />
+                </ISpan>
+                {goal.completed ? (
+                  <h3 style={{ textDecoration: "line-through" }}>
+                    {goal.target_date}
+                  </h3>
+                ) : (
+                  <h3 style={{ textDecoration: "none" }}>{goal.target_date}</h3>
+                )}
+
                 <Link
                   to={{
                     pathname: `/exercises/${goal.id}`

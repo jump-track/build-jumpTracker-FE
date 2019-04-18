@@ -8,7 +8,7 @@ class Graph extends React.Component {
       c3.generate({
         bindto: "#chart",
         data: {
-          columns: [["Jump Height Progression", ...this.props.goals]]
+          columns: [["Jump Height Progression", ...this.props.goals.reverse()]]
         }
       });
     }, 500);
@@ -18,7 +18,7 @@ class Graph extends React.Component {
       <div
         id="chart"
         style={{
-          heigth: "200px",
+          height: "400px",
           width: "600px",
           background: "lightBlue",
           opacity: 0.4
