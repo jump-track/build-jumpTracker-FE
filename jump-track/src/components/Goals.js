@@ -11,6 +11,15 @@ import styled from "styled-components";
 const GoalsMain = styled.div`
   display: flex;
   margin-top: 5%;
+
+  @media (max-width: 968px) {
+    // flex-wrap: wrap;
+    width: 100%;
+  }
+
+  @media (max-width: 668px) {
+    flex-direction: column;
+  }
 `;
 const GoalsLower = styled.section`
   width: 30%;
@@ -23,6 +32,12 @@ const GoalsLower = styled.section`
   text-align: center;
   border: 2px solid rgb(243, 131, 4);
   border-radius: 25px;
+  @media (max-width: 968px) {
+    width: 50%;
+  }
+  @media (max-width: 868px) {
+    width: 100%;
+  }
 `;
 const TButton = styled.button`
   margin: 2% 0 0 1%;
@@ -49,6 +64,12 @@ const InInput = styled.input`
   margin-top: 2%;
   background: lightblue;
   opacity: 0.4;
+  @media (max-width: 968px) {
+    width: 100%;
+  }
+  @media (max-width: 668px) {
+    width: 200px;
+  }
 `;
 
 const ISpan1 = styled.span`
@@ -107,7 +128,7 @@ class Goals extends React.Component {
     return (
       <GoalsMain>
         <GoalsUpper>
-          <Graph />
+          <Graph className="graph" />
           <form onSubmit={this.handleSubmit} className="form">
             <FormGroup>
               <InInput

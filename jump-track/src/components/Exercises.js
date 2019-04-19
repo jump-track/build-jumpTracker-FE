@@ -13,6 +13,12 @@ const InnerDiv = styled.div`
   width: 20%;
   opacity: 0.8;
   border-radius: 10px;
+  @media (max-width: 968px) {
+    width: 100%;
+  }
+  @media (max-width: 668px) {
+    width: 400px;
+  }
 `;
 
 const OuterDiv = styled.div`
@@ -25,13 +31,38 @@ const InInput = styled.input`
   height: 40px;
   background: lightblue;
   opacity: 0.5;
+  @media (max-width: 968px) {
+    width: 90%;
+    text-align: center;
+  }
+  @media (max-width: 668px) {
+    width: 90%;
+  }
 `;
 
 const IButton = styled.button`
   width: 20%;
+  @media (max-width: 968px) {
+    width: 90%;
+    margin-bottom: 25%;
+    height: 50px;
+    color: gray;
+  }
+  @media (max-width: 668px) {
+    width: 90%;
+    margin-bottom: 25%;
+    height: 50px;
+    color: gray;
+  }
 `;
 const IForm = styled.form`
   margin-left: 2%;
+  @media (max-width: 968px) {
+    margin-left: 2%;
+  }
+  @media (max-width: 668px) {
+    margin-left: 2%;
+  }
 `;
 class Exercises extends React.Component {
   constructor(props) {
@@ -88,7 +119,7 @@ class Exercises extends React.Component {
             />
           </FormGroup>
 
-          <IButton color="secondary">Update</IButton>
+          <IButton>Update</IButton>
         </IForm>
       </div>
     );

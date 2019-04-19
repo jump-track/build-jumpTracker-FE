@@ -20,8 +20,7 @@ class Graph extends React.Component {
         style={{
           height: "400px",
           width: "600px",
-          background: "brown",
-          opacity: 0.8
+          background: "brown"
         }}
       />
     );

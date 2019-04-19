@@ -26,6 +26,19 @@ h1 {
   border-radius: 25px;
   border: 2px solid rgb(243, 131, 4);
 }
+@media only screen and (max-width: 668px) {
+  .navLinks {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .navLinks {
+    width: 100%;
+    font-size: 8px;
+  }
+}
+
 .appDiv {
   float: right;
 }
