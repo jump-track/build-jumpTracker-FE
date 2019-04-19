@@ -19,7 +19,8 @@ class Graph extends React.Component {
         id="chart"
         style={{
           height: "400px",
-          width: "600px",
+          width: "99%",
+          marginRight: "1%",
           background: "brown"
         }}
       />

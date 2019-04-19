@@ -10,6 +10,14 @@ const InInput = styled.input`
   height: 40px;
   background: lightblue;
   opacity: 0.5;
+  text-align: center;
+  @media (max-width: 968px) {
+    width: 50%;
+    text-align: center;
+  }
+  @media (max-width: 668px) {
+    width: 200px;
+  }
 `;
 
 const IForm = styled.form`
@@ -20,6 +28,7 @@ const IForm = styled.form`
 const IButton = styled.button`
   width: 20%;
   height: 40px;
+  background: lightblue;
 `;
 
 class LogIn extends React.Component {

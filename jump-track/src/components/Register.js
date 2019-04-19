@@ -11,6 +11,12 @@ const InInput = styled.input`
   background: lightblue;
   opacity: 0.5;
   text-align: center;
+  @media (max-width: 968px) {
+    width: 50%;
+  }
+  @media (max-width: 668px) {
+    width: 200px;
+  }
 `;
 
 const FormRegister = styled.form`
