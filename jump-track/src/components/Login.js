@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, FormGroup } from "reactstrap";
+import { FormGroup } from "reactstrap";
 import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
 import styled from "styled-components";
 import { login } from "../actions";
 import "./Register.css";
@@ -17,6 +16,12 @@ const IForm = styled.form`
   margin: 5% 0 0 5%;
   text-align: center;
 `;
+
+const IButton = styled.button`
+  width: 20%;
+  height: 40px;
+`;
+
 class LogIn extends React.Component {
   state = {
     credentials: {
@@ -34,6 +39,13 @@ class LogIn extends React.Component {
     });
   };
 
+  isValid = () => {
+    if (this.state.username === "" || this.state.password === "") {
+      return false;
+    }
+    return true;
+  };
+
   login = e => {
     e.preventDefault();
     this.props.login(this.state.credentials).then(() => {
@@ -45,7 +57,7 @@ class LogIn extends React.Component {
     const { username, password } = this.state.credentials;
     return (
       <div>
-        <IForm onSubmit={this.login}>
+        <IForm onSubmit={this.login} disabled={!this.isValid()}>
           <FormGroup>
             <InInput
               size="lg"
@@ -66,14 +78,10 @@ class LogIn extends React.Component {
               placeholder="enter your password"
             />
           </FormGroup>
-          <Button size="lg" color="primary">
+          <IButton size="lg" color="secondary">
             {" "}
-            {this.props.loggingIn ? (
-              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-            ) : (
-              "Log in"
-            )}
-          </Button>
+            Log in
+          </IButton>
         </IForm>
       </div>
     );

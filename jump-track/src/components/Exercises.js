@@ -6,11 +6,12 @@ import "./Exercises.css";
 import styled from "styled-components";
 
 const InnerDiv = styled.div`
-  background: red;
+  background: rgba(0, 0, 0, 0.811);
+  color: rgb(243, 131, 4);
   padding: 2%;
   margin: 2%;
   width: 20%;
-  opacity: 0.4;
+  opacity: 0.8;
   border-radius: 10px;
 `;
 
@@ -20,10 +21,15 @@ const OuterDiv = styled.div`
   text-align: center;
 `;
 const InInput = styled.input`
-  width: 30%;
+  width: 20%;
   height: 40px;
+  background: lightblue;
+  opacity: 0.5;
 `;
 
+const IButton = styled.button`
+  width: 20%;
+`;
 const IForm = styled.form`
   margin-left: 2%;
 `;
@@ -65,7 +71,7 @@ class Exercises extends React.Component {
         <OuterDiv>
           {this.props.goals.map(item => (
             <InnerDiv key={item.id} className="exerciseInner">
-              <h3>{item.exercises}</h3> <h3>{item.date}</h3>
+              <p>{item.exercises}</p> <p>{item.date}</p>
             </InnerDiv>
           ))}
         </OuterDiv>
@@ -82,7 +88,7 @@ class Exercises extends React.Component {
             />
           </FormGroup>
 
-          <Button color="primary">Update</Button>
+          <IButton color="secondary">Update</IButton>
         </IForm>
       </div>
     );

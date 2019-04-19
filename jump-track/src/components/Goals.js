@@ -13,37 +13,55 @@ const GoalsMain = styled.div`
   margin-top: 5%;
 `;
 const GoalsLower = styled.section`
-  width: 100%;
-  margin: 0 5% 5% 5%;
-  background: white;
-  padding: 5%;
+  width: 30%;
+  margin: 0 1% 5% 2%;
+  background: rgba(0, 0, 0, 0.811);
+  padding: 0;
+  font-size: 16px;
   height: auto;
-  opacity: 0.4;
+  opacity: 0.8;
   text-align: center;
+  border: 2px solid rgb(243, 131, 4);
+  border-radius: 25px;
 `;
 const TButton = styled.button`
-  margin: 6% 0 0 6%;
+  margin: 2% 0 0 1%;
+  width: 80%;
+  font-size: 20px;
+  background: red;
+  border-radius: 10px;
 `;
 const GoalsFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
+const SpanDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 const GoalsUpper = styled.div`
   margin-left: 2%;
 `;
 const InInput = styled.input`
-  width: 50%;
+  width: 400px;
   height: 40px;
   margin-top: 2%;
   background: lightblue;
   opacity: 0.4;
 `;
 
-const ISpan = styled.span`
-  font-size: 16px;
-  padding: 2% 5%;
-  background: red;
+const ISpan1 = styled.span`
+  font-size: 24px;
+  padding-left: 10%;
+  margin-top: 5%;
+  color: red;
+`;
+const ISpan2 = styled.span`
+  font-size: 24px;
+  padding-right: 20px;
+  margin-top: 5%;
+  color: green;
 `;
 
 class Goals extends React.Component {
@@ -77,20 +95,13 @@ class Goals extends React.Component {
   };
 
   checked = goal => {
-    // console.log("goal1", goal);
     goal.completed = !goal.completed;
-    // goal.completed = !goal.completed;
-    // console.log("goal2", goal);
     this.props.completed(goal);
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 2000);
   };
 
   delete = id => {
     this.props.deleteGoal(id);
   };
-  // className = {`item${props.item.purchased ? " purchased" : ""}`
 
   render() {
     return (
@@ -123,24 +134,30 @@ class Goals extends React.Component {
           {this.props.goals &&
             this.props.goals.reverse().map(goal => (
               <GoalsLower key={goal.id}>
+                <SpanDiv>
+                  <ISpan1 onClick={() => this.delete(goal.id)}>
+                    {" "}
+                    <i className="fas fa-close" />
+                  </ISpan1>
+                  <ISpan2 onClick={() => this.checked(goal)}>
+                    {" "}
+                    <i className="fas fa-check" />
+                  </ISpan2>
+                </SpanDiv>
                 {goal.completed ? (
-                  <h3 style={{ textDecoration: "line-through" }}>
+                  <p style={{ textDecoration: "line-through" }}>
                     {goal.jump_height}
-                  </h3>
+                  </p>
                 ) : (
-                  <h3 style={{ textDecoration: "none" }}>{goal.jump_height}</h3>
+                  <p style={{ textDecoration: "none" }}>{goal.jump_height}</p>
                 )}
 
-                <ISpan onClick={() => this.checked(goal)}>
-                  {" "}
-                  <i className="fas fa-check" />
-                </ISpan>
                 {goal.completed ? (
-                  <h3 style={{ textDecoration: "line-through" }}>
+                  <p style={{ textDecoration: "line-through" }}>
                     {goal.target_date}
-                  </h3>
+                  </p>
                 ) : (
-                  <h3 style={{ textDecoration: "none" }}>{goal.target_date}</h3>
+                  <p style={{ textDecoration: "none" }}>{goal.target_date}</p>
                 )}
 
                 <Link
@@ -149,16 +166,9 @@ class Goals extends React.Component {
                   }}
                 >
                   <TButton size="lg" color="primary">
-                    Exercise Log
+                    Exercises
                   </TButton>
                 </Link>
-                <TButton
-                  size="lg"
-                  color="primary"
-                  onClick={() => this.delete(goal.id)}
-                >
-                  Delete
-                </TButton>
               </GoalsLower>
             ))}
         </GoalsFlex>

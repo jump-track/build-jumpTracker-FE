@@ -6,16 +6,24 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const InInput = styled.input`
-  width: 25vw;
+  width: 20%;
   height: 40px;
   background: lightblue;
   opacity: 0.5;
+  text-align: center;
 `;
 
 const FormRegister = styled.form`
   margin: 3% 0 0 3%;
   text-align: center;
 `;
+
+const TButton = styled.button`
+  width: 20%;
+  height: 40px;
+  color: lightblue;
+`;
+
 class Register extends React.Component {
   constructor() {
     super();
@@ -64,7 +72,7 @@ class Register extends React.Component {
     const { username, password, height, jumpHeight } = this.state;
     const { handleChange } = this;
     return (
-      <div class="container">
+      <div>
         <FormRegister onSubmit={this.register}>
           <FormGroup>
             <InInput
@@ -106,9 +114,9 @@ class Register extends React.Component {
               placeholder="enter your jump-height"
             />
           </FormGroup>
-          <Button disabled={!this.isValid()} size="lg" color="primary">
+          <TButton disabled={!this.isValid()} size="lg" color="secondary">
             Submit
-          </Button>
+          </TButton>
         </FormRegister>
       </div>
     );

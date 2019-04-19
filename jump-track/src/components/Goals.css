@@ -12,7 +12,7 @@
   padding: 10% 0;
 }
 .btn {
-  width: 50%;
+  width: 100%;
   margin: 5% 0;
 }
 
@@ -29,8 +29,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin: 0 auto;
-  width: 20vw;
+  width: 40vw;
   height: auto;
   z-index: 0;
   background: rgba(0, 0, 0, 0.811);
@@ -68,4 +69,7 @@
   background-color: #6c757d;
   border-color: #6c757d;
   border-radius: 5px;
+}
+.signBtn {
+  width: 40%;
 }
