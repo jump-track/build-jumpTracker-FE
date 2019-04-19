@@ -11,6 +11,7 @@ Full-Stack web application used for tracking and improving your vertical jump.
 - C3 (contributed by shaun)
 - React-strap
 - Styled-Component
+- css style (contributed by jay)
 
 ## back-end
 
