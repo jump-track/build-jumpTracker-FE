@@ -11,7 +11,7 @@ h1 {
   margin-left: 5%;
   text-decoration: none;
   color: rgb(243, 131, 4);
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .navLinks {
   animation-name: text-focus-in;
@@ -19,12 +19,10 @@ h1 {
   animation-iteration-count: 1;
   text-align: right;
   background: rgba(0, 0, 0, 0.811);
-  padding-right: 15%;
-  width: 110%;
-  margin-top: 1vh;
-  margin-bottom: 5vh;
-  border-radius: 25px;
-  border: 2px solid rgb(243, 131, 4);
+  padding: 1% 5% 1% 0;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(243, 131, 4);
 }
 @media only screen and (max-width: 668px) {
   .navLinks {
@@ -50,5 +48,5 @@ h1 {
 }
 .App {
   box-sizing: border-box;
-  max-width: 1280px;
+  max-width: 1480px;
 }

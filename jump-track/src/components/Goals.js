@@ -1,6 +1,6 @@
 import React from "react";
 import "./Goals.css";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
 import Graph from "./Graph";
@@ -21,13 +21,16 @@ const GoalsMain = styled.div`
     flex-direction: column;
   }
 `;
+const GoalsFlex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 const GoalsLower = styled.section`
-  width: 30%;
+  width: 200px;
+  height: 200px;
   margin: 0 1% 5% 2%;
   background: rgba(0, 0, 0, 0.811);
-  padding: 0;
   font-size: 16px;
-  height: auto;
   opacity: 0.8;
   text-align: center;
   border: 2px solid rgb(243, 131, 4);
@@ -45,10 +48,6 @@ const TButton = styled.button`
   font-size: 20px;
   background: red;
   border-radius: 10px;
-`;
-const GoalsFlex = styled.div`
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 const SpanDiv = styled.div`
@@ -153,7 +152,7 @@ class Goals extends React.Component {
         </GoalsUpper>
         <GoalsFlex>
           {this.props.goals &&
-            this.props.goals.reverse().map(goal => (
+            this.props.goals.map(goal => (
               <GoalsLower key={goal.id}>
                 <SpanDiv>
                   <ISpan1 onClick={() => this.delete(goal.id)}>
@@ -186,9 +185,7 @@ class Goals extends React.Component {
                     pathname: `/exercises/${goal.id}`
                   }}
                 >
-                  <TButton size="lg" color="primary">
-                    Exercises
-                  </TButton>
+                  <TButton>Exercises</TButton>
                 </Link>
               </GoalsLower>
             ))}
@@ -198,13 +195,13 @@ class Goals extends React.Component {
   }
 }
 
-const mapStateToProps = ({ goals }) => ({
-  goals
-});
+const mapStateToProps = state => {
+  return {
+    goals: state.goals
+  };
+};
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { getData, post, deleteGoal, completed }
-  )(Goals)
-);
+export default connect(
+  mapStateToProps,
+  { getData, post, deleteGoal, completed }
+)(Goals);

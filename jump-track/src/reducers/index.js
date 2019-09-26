@@ -84,7 +84,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: "",
-        goals: [...action.payload]
+        goals: [...action.payload],
+        completing: false
       };
     case COMPLETED_FAILURE:
       return {

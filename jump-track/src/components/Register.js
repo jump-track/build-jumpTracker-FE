@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormGroup } from "reactstrap";
+import { FormGroup } from "reactstrap";
 import "./Register.css";
 import { register } from "../actions";
 import { connect } from "react-redux";
