@@ -68,7 +68,8 @@ class Exercises extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      exercise: ""
+      exercise: "",
+      loaded: false
     };
   }
   handleChange = e => {
@@ -79,6 +80,7 @@ class Exercises extends React.Component {
   };
 
   componentDidMount() {
+    this.setState({ loaded: !this.state.loaded });
     this.props.exerciseGet(this.props.match.params.id);
   }
 
