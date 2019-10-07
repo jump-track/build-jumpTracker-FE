@@ -80,18 +80,19 @@ class Exercises extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ loaded: !this.state.loaded });
     this.props.exerciseGet(this.props.match.params.id);
   }
 
   handleSubmit = e => {
     e.preventDefault();
     const modifiedObj = {
-      exercises: this.state.exercise
+      exercises: this.state.exercise,
+      loaded: true
     };
     this.props.exercise(this.props.match.params.id, modifiedObj);
     this.setState({
-      exercise: ""
+      exercise: "",
+      loaded: false
     });
   };
 
