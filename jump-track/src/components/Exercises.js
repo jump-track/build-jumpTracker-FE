@@ -10,7 +10,7 @@ const InnerDiv = styled.div`
   color: #034f84;
   padding: 2%;
   margin: 2%;
-  width: 20%;
+  width: 40%;
   opacity: 0.8;
   border-radius: 10px;
   @media (max-width: 968px) {

@@ -6,14 +6,18 @@ const Home = () => {
   return (
     <div className="homeDiv">
       <section className="homeFlex">
-        <img
-          className="homeImg"
-          src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
-          alt="drawing"
-          width="50"
-          height="50"
-        />{" "}
-        <h1>Jump Tracker</h1>
+        <div>
+          <img
+            className="homeImg"
+            src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
+            alt="drawing"
+            width="50"
+            height="50"
+          />{" "}
+        </div>
+        <div>
+          <h1>Jump Tracker</h1>
+        </div>
       </section>
       <p className="homeP">
         Welcome to the Jump Tracker application. Jumping is one athletic

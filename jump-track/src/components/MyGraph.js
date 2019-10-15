@@ -8,11 +8,11 @@ class MyGraph extends React.Component {
 
     this.state = {
       data: {
-        labels: ["1", "2", "3", "4", "5"],
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8"],
         datasets: [
           {
             label: "heights",
-            backgroundColor: "rgba(255, 0, 255, 0.75)",
+            backgroundColor: "rgba(122, 96, 72, 1)",
             data: [...this.props.goals]
           }
         ]
@@ -40,9 +40,8 @@ class MyGraph extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
-      <div style={{ width: 500, height: 400 }}>
+      <div style={{ width: 500, height: 600 }}>
         <Line
           options={{
             responsive: true
