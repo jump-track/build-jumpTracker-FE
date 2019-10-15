@@ -14,6 +14,7 @@
   width: 50%;
   background: #838487;
 }
+
 @media only screen and (max-width: 668px) {
   .form {
     width: 100%;

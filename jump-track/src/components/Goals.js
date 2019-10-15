@@ -3,7 +3,7 @@ import "./Goals.css";
 import { Link } from "react-router-dom";
 import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
-// import Graph from "./Graph";
+import MyGraph from "./MyGraph";
 import { getData, post, deleteGoal, completed } from "../actions";
 import "./Goals.css";
 import styled from "styled-components";
@@ -13,6 +13,7 @@ import myImage3 from "./image/send.png";
 
 const GoalsMain = styled.div`
   height: 760px;
+  position: relative;
   @media (max-width: 968px) {
     // flex-wrap: wrap;
     width: 100%;
@@ -112,8 +113,7 @@ class Goals extends React.Component {
   render() {
     return (
       <GoalsMain>
-        <GoalsUpper>
-          {/* <Graph className="graph" /> */}
+        <GoalsUpper style={{ position: "relative" }}>
           <form onSubmit={this.handleSubmit} className="form">
             <FormGroup>
               <InInput
@@ -135,6 +135,17 @@ class Goals extends React.Component {
             </FormGroup>
             <Button className="signBtn">Set Goal</Button>
           </form>
+          <div
+            style={{
+              position: "fixed",
+              width: "600px",
+              height: "300px",
+              bottom: 0,
+              right: 0
+            }}
+          >
+            <MyGraph />
+          </div>
         </GoalsUpper>
         <GoalsFlex>
           {this.props.goals &&
