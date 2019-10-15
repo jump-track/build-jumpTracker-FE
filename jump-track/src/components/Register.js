@@ -8,7 +8,6 @@ import styled from "styled-components";
 const InInput = styled.input`
   width: 20%;
   height: 40px;
-  background: lightblue;
   opacity: 0.5;
   text-align: center;
   @media (max-width: 968px) {
@@ -27,7 +26,8 @@ const FormRegister = styled.form`
 const TButton = styled.button`
   width: 20%;
   height: 40px;
-  color: lightblue;
+  background: #838487;
+  color: white;
 `;
 
 class Register extends React.Component {
@@ -78,7 +78,7 @@ class Register extends React.Component {
     const { username, password, height, jumpHeight } = this.state;
     const { handleChange } = this;
     return (
-      <div>
+      <div className="regDiv">
         <FormRegister onSubmit={this.register}>
           <FormGroup>
             <InInput

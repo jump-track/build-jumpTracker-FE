@@ -1,26 +1,23 @@
-.form {
+.pngs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  width: 40vw;
-  height: auto;
-  z-index: 0;
-  background: rgba(0, 0, 0, 0.811);
-  border-radius: 25px;
-  border: 2px solid rgb(243, 131, 4);
-  padding: 5% 0;
+  justify-content: space-around;
 }
 
+.form {
+  padding: 20px;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: 400px;
+}
+.signBtn {
+  width: 50%;
+  background: #838487;
+}
 @media only screen and (max-width: 668px) {
   .form {
     width: 100%;
     font-size: 16px;
     margin-bottom: 2%;
   }
-}
-
-.signBtn {
-  width: 40%;
 }

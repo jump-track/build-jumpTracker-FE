@@ -17,13 +17,17 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="navLinks">
-            <NavLink exact to="/">
+            <NavLink style={{ textDecoration: "none" }} exact to="/">
               {" "}
               Home
             </NavLink>
-            <NavLink to="/protected">Goals</NavLink>
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/logIn">Log In</NavLink>
+            <NavLink style={{ textDecoration: "none" }} to="/protected">
+              Goals
+            </NavLink>
+            {/* <NavLink to="/register">Register</NavLink> */}
+            <NavLink style={{ textDecoration: "none" }} to="/logIn">
+              Log In
+            </NavLink>
             <NavLink to="/">
               <div className="appDiv" onClick={this.handleClick}>
                 Log out

@@ -7,6 +7,7 @@ const Home = () => {
     <div className="homeDiv">
       <section className="homeFlex">
         <img
+          className="homeImg"
           src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
           alt="drawing"
           width="50"
@@ -14,7 +15,7 @@ const Home = () => {
         />{" "}
         <h1>Jump Tracker</h1>
       </section>
-      <p>
+      <p className="homeP">
         Welcome to the Jump Tracker application. Jumping is one athletic
         movement that can greatly effect your game, for better or worse. With a
         specialized training regiment YOU can improve your jumping height and or
@@ -28,18 +29,26 @@ const Home = () => {
         also unrewarding. This can cause us mentally to feel ungratified with
         our efforts.
       </p>
-      <p>
+      <p className="homeP">
         Enter the world of technology. Have you ever noticed how your life is
         streamlined by technology. It can encompass your life, both leading you
         in the direction you intended, or leave you lost in the wilderness. This
-        is a fine line. With our technologic application, we give you access to
-        enhancing your life's endeavors to jump higher. We want you to "JUMP"
-        past your goals, and help you along the whole way. The foreshadowed
-        issues above are easily handled wiht this application. Please...
+        is a fine line. With our application, we give you access to enhancing
+        your life's endeavors to jump higher. We want you to "JUMP" past your
+        goals, and help you along the whole way. The foreshadowed issues above
+        are easily handled with this application. Please...
       </p>
-      <p>
-        <Link to="/logIn">Log In </Link>or{" "}
-        <Link to="/register">Register today!</Link>
+      <p className="homeP">
+        <Link style={{ color: "#672E3B", textDecoration: "none" }} to="/logIn">
+          Log In{" "}
+        </Link>
+        or{" "}
+        <Link
+          style={{ color: "#672E3B", textDecoration: "none" }}
+          to="/register"
+        >
+          Register today!
+        </Link>
       </p>
     </div>
   );

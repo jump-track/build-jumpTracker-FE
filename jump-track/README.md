@@ -32,6 +32,10 @@ Full-Stack web application used for tracking and improving your vertical jump.
 
 ## authors
 
-- Tenzing Yeshi -_initial work_- [tyeshi777](https://github.com/tyeshi777)
+- Tenzing Yeshi -_initial work_- [tyeshi181](https://github.com/tyeshi181)
 - Shaun Carmody -_initial work_- [shaunmcarmody](https://github.com/shaunmcarmody)
 - Jay Maas -_initial work_- [jay-maas](https://github.com/jay-maas)
+
+## username and password
+
+- test and test

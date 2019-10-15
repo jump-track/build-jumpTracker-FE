@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { login } from "../actions";
 import "./Register.css";
+import { Link } from "react-router-dom";
 
 const InInput = styled.input`
   width: 20%;
   height: 40px;
-  background: lightblue;
   opacity: 0.5;
   text-align: center;
   @media (max-width: 968px) {
@@ -28,7 +28,9 @@ const IForm = styled.form`
 const IButton = styled.button`
   width: 20%;
   height: 40px;
-  background: lightblue;
+  color: "#955251";
+  background: #838487;
+  color: white;
 `;
 
 class LogIn extends React.Component {
@@ -65,7 +67,7 @@ class LogIn extends React.Component {
   render() {
     const { username, password } = this.state.credentials;
     return (
-      <div>
+      <div className="loginDiv">
         <IForm onSubmit={this.login} disabled={!this.isValid()}>
           <FormGroup>
             <InInput
@@ -92,6 +94,21 @@ class LogIn extends React.Component {
             Log in
           </IButton>
         </IForm>
+        <p className="regDiv">
+          <Link
+            style={{
+              color: "#955251",
+              textAlign: "center",
+              background: "white",
+              padding: "1%",
+              border: "1px solid black",
+              textDecoration: "none"
+            }}
+            to="/register"
+          >
+            Create account
+          </Link>
+        </p>
       </div>
     );
   }

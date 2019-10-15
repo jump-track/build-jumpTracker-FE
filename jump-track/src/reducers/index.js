@@ -49,6 +49,7 @@ const reducer = (state = initialState, action) => {
     case POST_SUCCESS:
       return {
         ...state,
+        error: "",
         goals: [...action.payload],
         posting: false
       };
@@ -67,6 +68,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         fetchingData: false,
+        error: "",
         goals: [...action.payload]
       };
     case FETCH_DATA_FAILURE:
@@ -120,7 +122,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: "",
-        gettingExercise: false,
         goals: [...action.payload]
       };
     case EXERCISE_GET_FAILURE:

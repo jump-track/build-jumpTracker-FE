@@ -6,8 +6,8 @@ import "./Exercises.css";
 import styled from "styled-components";
 
 const InnerDiv = styled.div`
-  background: rgba(0, 0, 0, 0.811);
-  color: rgb(243, 131, 4);
+  background: #9896a4;
+  color: #034f84;
   padding: 2%;
   margin: 2%;
   width: 20%;
@@ -25,12 +25,13 @@ const OuterDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  color: red;
 `;
 const InInput = styled.input`
-  width: 20%;
+  width: 80%;
   height: 40px;
-  background: lightblue;
   opacity: 0.5;
+  text-align: center;
   @media (max-width: 968px) {
     width: 90%;
     text-align: center;
@@ -41,12 +42,16 @@ const InInput = styled.input`
 `;
 
 const IButton = styled.button`
-  width: 20%;
+  width: 40%;
+  background: #838487;
+  border-radius: 5%;
+  height: 35px;
+  color: white;
   @media (max-width: 968px) {
     width: 90%;
     margin-bottom: 25%;
     height: 50px;
-    color: gray;
+    // color: "#955251";
   }
   @media (max-width: 668px) {
     width: 90%;
@@ -56,7 +61,12 @@ const IButton = styled.button`
   }
 `;
 const IForm = styled.form`
-  margin-left: 2%;
+  margin: 0 0 0.5% 1%;
+  padding: 10px;
+  position: fixed;
+  left: 15px;
+  bottom: 10px;
+  width: 400px;
   @media (max-width: 968px) {
     margin-left: 2%;
   }
@@ -87,21 +97,20 @@ class Exercises extends React.Component {
     e.preventDefault();
     const modifiedObj = {
       exercises: this.state.exercise,
-      loaded: true
+      loaded: !this.state.loaded
     };
     this.props.exercise(this.props.match.params.id, modifiedObj);
     this.setState({
       exercise: "",
-      loaded: false
+      loaded: !this.state.loaded
     });
   };
 
   render() {
-    // console.log("exercise", this.props.goals);
     const { exercise } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
-      <div>
+      <div className="exerciseDiv">
         <OuterDiv>
           {this.props.goals.map(item => (
             <InnerDiv key={item.id} className="exerciseInner">

@@ -18,10 +18,14 @@ class Graph extends React.Component {
       <div
         id="chart"
         style={{
-          height: "400px",
-          width: "99%",
-          marginRight: "1%",
-          background: "brown"
+          height: "300px",
+          background: "#9896a4",
+          padding: "20px",
+          position: "fixed",
+          bottom: "40px",
+          top: "400px",
+          left: "800px",
+          width: "400px"
         }}
       />
     );

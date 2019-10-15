@@ -13,6 +13,5 @@ export const getData = () => dispatch => {
     })
     .catch(err => {
       console.log(err.response);
-      dispatch({ type: FETCH_DATA_FAILURE, payload: err.response });
     });
 };

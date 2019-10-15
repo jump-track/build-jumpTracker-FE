@@ -8,7 +8,6 @@ export const post = input => dispatch => {
   axiosAuth()
     .post("https://jump-tracker.herokuapp.com/goals/", input)
     .then(res => {
-      console.log(res);
       dispatch({ type: POST_SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));

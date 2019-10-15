@@ -1,15 +1,15 @@
 h1 {
   margin-top: 10%;
   margin-left: 3%;
-  color: rgb(243, 131, 4);
+  color: #2e4a62;
   animation-name: tracking-in-expand;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
-p {
-  margin: 5%;
+.homeP {
+  margin: 2%;
   opacity: 0.8;
-  color: white;
+  color: #2e4a62;
 }
 .homeFlex {
   margin: 2% 0;
@@ -20,13 +20,13 @@ p {
 .homeDiv {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 50px auto;
   width: 75vw;
   height: auto;
   z-index: 0;
-  background: rgba(0, 0, 0, 0.811);
+  /* background: rgba(0, 0, 0, 0.811); */
   border-radius: 25px;
-  border: 2px solid rgb(243, 131, 4);
+  /* border: 2px solid rgb(243, 131, 4); */
   padding: 1%;
 }
 
@@ -35,7 +35,7 @@ h2 {
   text-align: center;
 }
 
-img {
+.homeImg {
   animation-name: shake-vertical;
   animation-duration: 5s;
   animation-iteration-count: infinite;

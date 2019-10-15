@@ -3,15 +3,16 @@ import "./Goals.css";
 import { Link } from "react-router-dom";
 import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
-import Graph from "./Graph";
+// import Graph from "./Graph";
 import { getData, post, deleteGoal, completed } from "../actions";
 import "./Goals.css";
 import styled from "styled-components";
+import myImage1 from "./image/correct-symbol.png";
+import myImage2 from "./image/delete-button.png";
+import myImage3 from "./image/send.png";
 
 const GoalsMain = styled.div`
-  display: flex;
-  margin-top: 5%;
-
+  height: 760px;
   @media (max-width: 968px) {
     // flex-wrap: wrap;
     width: 100%;
@@ -22,19 +23,21 @@ const GoalsMain = styled.div`
   }
 `;
 const GoalsFlex = styled.div`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 `;
 const GoalsLower = styled.section`
-  width: 200px;
-  height: 200px;
-  margin: 0 1% 5% 2%;
-  background: rgba(0, 0, 0, 0.811);
-  font-size: 16px;
+  background: #9896a4;
   opacity: 0.8;
+  position: relative;
+  color: white;
+  width: 15%;
   text-align: center;
-  border: 2px solid rgb(243, 131, 4);
-  border-radius: 25px;
+  padding: 1% 0;
+  border-radius: 5%;
+  height: auto;
+  margin: 2%;
   @media (max-width: 968px) {
     width: 50%;
   }
@@ -42,27 +45,14 @@ const GoalsLower = styled.section`
     width: 100%;
   }
 `;
-const TButton = styled.button`
-  margin: 2% 0 0 1%;
-  width: 80%;
-  font-size: 20px;
-  background: red;
-  border-radius: 10px;
-`;
 
-const SpanDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 const GoalsUpper = styled.div`
-  margin-left: 2%;
+  width: 100%;
 `;
 const InInput = styled.input`
-  width: 400px;
+  width: 80%;
+  text-align: center;
   height: 40px;
-  margin-top: 2%;
-  background: lightblue;
-  opacity: 0.4;
   @media (max-width: 968px) {
     width: 100%;
   }
@@ -71,31 +61,24 @@ const InInput = styled.input`
   }
 `;
 
-const ISpan1 = styled.span`
-  font-size: 24px;
-  padding-left: 10%;
-  margin-top: 5%;
-  color: red;
-`;
-const ISpan2 = styled.span`
-  font-size: 24px;
-  padding-right: 20px;
-  margin-top: 5%;
-  color: green;
-`;
-
 class Goals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      jumpHeight: undefined,
-      target: undefined
+      jumpHeight: "",
+      target: "",
+      refresh: false
     };
   }
 
-  // console.log("props", props.goals);
   componentDidMount() {
     this.props.getData();
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.state.refresh !== prevState.refresh) {
+      this.props.getData();
+    }
   }
 
   handleChange = e => {
@@ -120,6 +103,9 @@ class Goals extends React.Component {
   };
 
   delete = id => {
+    this.setState({
+      refresh: !this.state.refresh
+    });
     this.props.deleteGoal(id);
   };
 
@@ -127,7 +113,7 @@ class Goals extends React.Component {
     return (
       <GoalsMain>
         <GoalsUpper>
-          <Graph className="graph" />
+          {/* <Graph className="graph" /> */}
           <form onSubmit={this.handleSubmit} className="form">
             <FormGroup>
               <InInput
@@ -154,22 +140,14 @@ class Goals extends React.Component {
           {this.props.goals &&
             this.props.goals.map(goal => (
               <GoalsLower key={goal.id}>
-                <SpanDiv>
-                  <ISpan1 onClick={() => this.delete(goal.id)}>
-                    {" "}
-                    <i className="fas fa-close" />
-                  </ISpan1>
-                  <ISpan2 onClick={() => this.checked(goal)}>
-                    {" "}
-                    <i className="fas fa-check" />
-                  </ISpan2>
-                </SpanDiv>
                 {goal.completed ? (
                   <p style={{ textDecoration: "line-through" }}>
-                    {goal.jump_height}
+                    Target Height: {goal.jump_height}cm
                   </p>
                 ) : (
-                  <p style={{ textDecoration: "none" }}>{goal.jump_height}</p>
+                  <p style={{ textDecoration: "none" }}>
+                    Target Height: {goal.jump_height}cm
+                  </p>
                 )}
 
                 {goal.completed ? (
@@ -180,13 +158,29 @@ class Goals extends React.Component {
                   <p style={{ textDecoration: "none" }}>{goal.target_date}</p>
                 )}
 
-                <Link
-                  to={{
-                    pathname: `/exercises/${goal.id}`
-                  }}
-                >
-                  <TButton>Exercises</TButton>
-                </Link>
+                <div className="pngs">
+                  <img
+                    onClick={() => this.checked(goal)}
+                    src={myImage1}
+                    alt="drawing"
+                    width="30"
+                    height="30"
+                  />
+                  <img
+                    onClick={() => this.delete(goal.id)}
+                    src={myImage2}
+                    alt="drawing"
+                    width="30"
+                    height="30"
+                  />
+                  <Link
+                    to={{
+                      pathname: `/exercises/${goal.id}`
+                    }}
+                  >
+                    <img src={myImage3} alt="drawing" width="30" height="30" />
+                  </Link>
+                </div>
               </GoalsLower>
             ))}
         </GoalsFlex>

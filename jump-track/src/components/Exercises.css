@@ -1,4 +1,7 @@
 p {
   font-size: 20px;
-  color: rgb(243, 131, 4);
+  color: #2e4a62;
+}
+.exerciseDiv {
+  height: 760px;
 }
