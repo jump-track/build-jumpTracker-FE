@@ -36,8 +36,8 @@ class Register extends React.Component {
     this.state = {
       username: "",
       password: "",
-      height: undefined || 0,
-      jumpHeight: undefined || 0
+      height: "",
+      jumpHeight: ""
     };
   }
 
@@ -52,8 +52,10 @@ class Register extends React.Component {
     if (
       this.state.username === "" ||
       this.state.password === "" ||
-      this.state.height <= 0 ||
-      this.state.jumpHeight <= 0
+      this.state.height === "" ||
+      NaN ||
+      this.state.jumpHeight === "" ||
+      NaN
     ) {
       return false;
     }
@@ -103,7 +105,7 @@ class Register extends React.Component {
           <FormGroup>
             <InInput
               size="lg"
-              type="number"
+              type="text"
               value={height}
               name="height"
               onChange={handleChange}
@@ -113,7 +115,7 @@ class Register extends React.Component {
           <FormGroup>
             <InInput
               size="lg"
-              type="number"
+              type="text"
               value={jumpHeight}
               name="jumpHeight"
               onChange={handleChange}
