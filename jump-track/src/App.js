@@ -25,7 +25,15 @@ class App extends Component {
               Goals
             </NavLink>
             {/* <NavLink to="/register">Register</NavLink> */}
-            <NavLink style={{ textDecoration: "none" }} to="/logIn">
+            <NavLink
+              onClick={() =>
+                alert(
+                  "You can register and login or you can use username is test and password is test"
+                )
+              }
+              style={{ textDecoration: "none" }}
+              to="/logIn"
+            >
               Log In
             </NavLink>
             <NavLink to="/">
