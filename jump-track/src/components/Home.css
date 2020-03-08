@@ -9,7 +9,6 @@ h1 {
 }
 .homeP {
   margin: 2%;
-  opacity: 0.8;
   color: #2e4a62;
 }
 .homeFlex {
@@ -35,4 +34,17 @@ h1 {
   animation-name: shake-vertical;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+}
+.buttonFlex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttonHover {
+  border-radius: 10px;
+  padding: 10px 0;
+}
+.buttonHover:hover {
+  background: #81bef7;
+  color: white;
 }
