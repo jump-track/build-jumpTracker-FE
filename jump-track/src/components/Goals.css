@@ -12,6 +12,7 @@
 }
 .signBtn {
   width: 50%;
+  border-radius: 10px;
   background: #838487;
 }
 

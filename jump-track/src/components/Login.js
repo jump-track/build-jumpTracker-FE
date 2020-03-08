@@ -33,6 +33,11 @@ const IButton = styled.button`
   color: "#955251";
   background: #838487;
   color: white;
+  &:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
 `;
 const IButton1 = styled.button`
   margin-top: 3%;
@@ -42,8 +47,9 @@ const IButton1 = styled.button`
   color: "#955251";
   color: white;
   &:hover {
-    background-color: #81bef7;
+    background-color: #088a29;
     color: white;
+    cursor: pointer;
   }
 `;
 
@@ -73,9 +79,11 @@ class LogIn extends React.Component {
 
   login = e => {
     e.preventDefault();
-    this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/protected");
-    });
+    if (this.isValid) {
+      this.props.login(this.state.credentials).then(() => {
+        this.props.history.push("/protected");
+      });
+    }
   };
 
   render() {
@@ -133,6 +141,7 @@ class LogIn extends React.Component {
               <InInput
                 size="lg"
                 type="text"
+                required={true}
                 value={username}
                 name="username"
                 onChange={this.handleChange}
@@ -143,6 +152,7 @@ class LogIn extends React.Component {
               <InInput
                 size="lg"
                 type="text"
+                required={true}
                 value={password}
                 name="password"
                 onChange={this.handleChange}

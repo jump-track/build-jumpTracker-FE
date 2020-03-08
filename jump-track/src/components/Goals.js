@@ -1,6 +1,6 @@
 import React from "react";
 import "./Goals.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button, FormGroup } from "reactstrap";
 import { connect } from "react-redux";
 import MyGraph from "./MyGraph";
@@ -52,6 +52,7 @@ const GoalsUpper = styled.div`
 `;
 const InInput = styled.input`
   width: 80%;
+  border-radius: 10px;
   text-align: center;
   height: 40px;
   @media (max-width: 968px) {
@@ -112,96 +113,128 @@ class Goals extends React.Component {
 
   render() {
     return (
-      <GoalsMain>
-        <GoalsUpper style={{ position: "relative" }}>
-          <form onSubmit={this.handleSubmit} className="form">
-            <FormGroup>
-              <InInput
-                type="text"
-                value={this.state.jumpHeight}
-                name="jumpHeight"
-                onChange={this.handleChange}
-                placeholder="enter your jump height"
-              />
-            </FormGroup>
-            <FormGroup>
-              <InInput
-                type="text"
-                value={this.state.target}
-                name="target"
-                onChange={this.handleChange}
-                placeholder="enter your target week"
-              />
-            </FormGroup>
-            <Button className="signBtn">Set Goal</Button>
-          </form>
+      <div>
+        <div>
           <div
             style={{
-              position: "fixed",
-              width: "600px",
-              height: "300px",
-              bottom: 0,
-              right: 0
+              display: "flex",
+              justifyContent: "space-between",
+              height: "auto",
+              marginTop: "3%",
+              textAlign: "center"
             }}
           >
-            <MyGraph />
+            <NavLink
+              style={{
+                textDecoration: "none",
+                marginLeft: "3%",
+                color: "black"
+              }}
+              exact
+              to="/"
+            >
+              {" "}
+              <div>
+                <i className="fas fa-home fa-2x"></i>{" "}
+              </div>
+            </NavLink>
+
+            <NavLink
+              style={{ textDecoration: "none", color: "black" }}
+              to="/register"
+            >
+              <i class="fas fa-sign-out-alt fa-2x"></i>
+            </NavLink>
           </div>
-        </GoalsUpper>
-        <GoalsFlex>
-          {this.props.goals &&
-            this.props.goals.map(goal => (
-              <GoalsLower key={goal.id}>
-                {goal.completed ? (
-                  <div>
-                    <p style={{ textDecoration: "line-through" }}>
-                      Target Height: {goal.jump_height}cm
-                    </p>
-                    <p>{goal.target_date}</p>
-                  </div>
-                ) : (
-                  <div>
-                    <p style={{ textDecoration: "none" }}>
-                      Target Height: {goal.jump_height}cm
-                    </p>
-                    <p>{goal.target_date}</p>
-                  </div>
-                )}
+        </div>
+        <GoalsMain>
+          <GoalsUpper style={{ position: "relative" }}>
+            <form onSubmit={this.handleSubmit} className="form">
+              <FormGroup>
+                <InInput
+                  type="text"
+                  value={this.state.jumpHeight}
+                  name="jumpHeight"
+                  onChange={this.handleChange}
+                  placeholder="enter your jump height"
+                />
+              </FormGroup>
+              <FormGroup>
+                <InInput
+                  type="text"
+                  value={this.state.target}
+                  name="target"
+                  onChange={this.handleChange}
+                  placeholder="enter your target week"
+                />
+              </FormGroup>
+              <Button className="signBtn">Set Goal</Button>
+            </form>
+            <div
+              style={{
+                position: "fixed",
+                width: "600px",
+                height: "300px",
+                bottom: 0,
+                right: 0
+              }}
+            >
+              <MyGraph />
+            </div>
+          </GoalsUpper>
+          <GoalsFlex>
+            {this.props.goals &&
+              this.props.goals.map(goal => (
+                <GoalsLower key={goal.id}>
+                  {goal.completed ? (
+                    <div>
+                      <p style={{ textDecoration: "line-through" }}>
+                        Target Height: {goal.jump_height}cm
+                      </p>
+                      <p>{goal.target_date}</p>
+                    </div>
+                  ) : (
+                    <div>
+                      <p style={{ textDecoration: "none" }}>
+                        Target Height: {goal.jump_height}cm
+                      </p>
+                      <p>{goal.target_date}</p>
+                    </div>
+                  )}
 
-                {/* {goal.completed ? (
-                  <p style={{ textDecoration: "line-through" }}>
-                    {goal.target_date}
-                  </p>
-                ) : (
-                  <p style={{ textDecoration: "none" }}>{goal.target_date}</p>
-                )} */}
-
-                <div className="pngs">
-                  <img
-                    onClick={() => this.checked(goal)}
-                    src={myImage1}
-                    alt="drawing"
-                    width="30"
-                    height="30"
-                  />
-                  <img
-                    onClick={() => this.delete(goal.id)}
-                    src={myImage2}
-                    alt="drawing"
-                    width="30"
-                    height="30"
-                  />
-                  <Link
-                    to={{
-                      pathname: `/exercises/${goal.id}`
-                    }}
-                  >
-                    <img src={myImage3} alt="drawing" width="30" height="30" />
-                  </Link>
-                </div>
-              </GoalsLower>
-            ))}
-        </GoalsFlex>
-      </GoalsMain>
+                  <div className="pngs">
+                    <img
+                      onClick={() => this.checked(goal)}
+                      src={myImage1}
+                      alt="drawing"
+                      width="30"
+                      height="30"
+                    />
+                    <img
+                      onClick={() => this.delete(goal.id)}
+                      src={myImage2}
+                      alt="drawing"
+                      width="30"
+                      height="30"
+                    />
+                    <Link
+                      to={{
+                        pathname: `/exercises/${goal.id}`
+                      }}
+                    >
+                      <img
+                        src={myImage3}
+                        alt="drawing"
+                        width="30"
+                        height="30"
+                      />
+                    </Link>
+                  </div>
+                </GoalsLower>
+              ))}
+          </GoalsFlex>
+        </GoalsMain>
+      </div>
     );
   }
 }

@@ -30,6 +30,11 @@ const TButton = styled.button`
   border-radius: 10px;
   background: #838487;
   color: white;
+  &:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
 `;
 
 class Register extends React.Component {
@@ -66,12 +71,14 @@ class Register extends React.Component {
 
   register = e => {
     e.preventDefault();
-    let stateObj = this.state;
-    stateObj.height = parseInt(this.state.height, 10);
-    stateObj.jumpHeight = parseInt(this.state.jumpHeight, 10);
-    this.props.register(stateObj).then(() => {
-      this.props.history.push("/login");
-    });
+    if (this.isValid) {
+      let stateObj = this.state;
+      stateObj.height = parseInt(this.state.height, 10);
+      stateObj.jumpHeight = parseInt(this.state.jumpHeight, 10);
+      this.props.register(stateObj).then(() => {
+        this.props.history.push("/login");
+      });
+    }
   };
 
   // logOut = () => {
@@ -125,6 +132,7 @@ class Register extends React.Component {
             <InInput
               size="lg"
               type="text"
+              required={true}
               value={username}
               name="username"
               onChange={handleChange}
@@ -135,6 +143,7 @@ class Register extends React.Component {
             <InInput
               size="lg"
               type="text"
+              required={true}
               value={password}
               name="password"
               onChange={handleChange}
@@ -145,6 +154,7 @@ class Register extends React.Component {
             <InInput
               size="lg"
               type="text"
+              required={true}
               value={height}
               name="height"
               onChange={handleChange}
@@ -155,6 +165,7 @@ class Register extends React.Component {
             <InInput
               size="lg"
               type="text"
+              required={true}
               value={jumpHeight}
               name="jumpHeight"
               onChange={handleChange}
