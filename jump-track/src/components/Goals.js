@@ -152,22 +152,28 @@ class Goals extends React.Component {
             this.props.goals.map(goal => (
               <GoalsLower key={goal.id}>
                 {goal.completed ? (
-                  <p style={{ textDecoration: "line-through" }}>
-                    Target Height: {goal.jump_height}cm
-                  </p>
+                  <div>
+                    <p style={{ textDecoration: "line-through" }}>
+                      Target Height: {goal.jump_height}cm
+                    </p>
+                    <p>{goal.target_date}</p>
+                  </div>
                 ) : (
-                  <p style={{ textDecoration: "none" }}>
-                    Target Height: {goal.jump_height}cm
-                  </p>
+                  <div>
+                    <p style={{ textDecoration: "none" }}>
+                      Target Height: {goal.jump_height}cm
+                    </p>
+                    <p>{goal.target_date}</p>
+                  </div>
                 )}
 
-                {goal.completed ? (
+                {/* {goal.completed ? (
                   <p style={{ textDecoration: "line-through" }}>
                     {goal.target_date}
                   </p>
                 ) : (
                   <p style={{ textDecoration: "none" }}>{goal.target_date}</p>
-                )}
+                )} */}
 
                 <div className="pngs">
                   <img
@@ -206,7 +212,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { getData, post, deleteGoal, completed }
-)(Goals);
+export default connect(mapStateToProps, {
+  getData,
+  post,
+  deleteGoal,
+  completed
+})(Goals);

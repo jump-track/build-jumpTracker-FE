@@ -28,7 +28,7 @@ class App extends Component {
             <NavLink
               onClick={() =>
                 alert(
-                  "You can register and login or you can use username is test and password is test"
+                  "You can register and login or you can use username is test and password is test to login"
                 )
               }
               style={{ textDecoration: "none" }}
