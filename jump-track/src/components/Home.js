@@ -43,12 +43,23 @@ const Home = () => {
         are easily handled with this application. Please...
       </p>
       <p className="homeP">
-        <Link style={{ color: "#672E3B", textDecoration: "none" }} to="/logIn">
+        <Link
+          style={{
+            color: "#672E3B",
+            textDecoration: "none",
+            textShadow: "1px 1px #5a7a80"
+          }}
+          to="/logIn"
+        >
           Log In{" "}
         </Link>
         or{" "}
         <Link
-          style={{ color: "#672E3B", textDecoration: "none" }}
+          style={{
+            color: "#672E3B",
+            textDecoration: "none",
+            textShadow: "1px 1px #5a7a80"
+          }}
           to="/register"
         >
           Register today!

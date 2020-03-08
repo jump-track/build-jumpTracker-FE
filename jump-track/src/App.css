@@ -1,15 +1,17 @@
-body {
+/* body {
   background-image: url("https://images.pexels.com/photos/1935856/pexels-photo-1935856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 h1 {
   text-align: center;
+  text-shadow: 1px 1px #5a7a80;
 }
 .navLinks a {
-  margin-left: 5%;
+  margin-left: 3%;
   color: #2e4a62;
+  text-shadow: 2px 2px #5a7a80;
   font-size: 1.5em;
 }
 .navLinks {
