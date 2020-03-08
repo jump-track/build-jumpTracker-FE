@@ -1,5 +1,6 @@
 import React from "react";
 import { FormGroup } from "reactstrap";
+import { NavLink } from "react-router-dom";
 import "./Register.css";
 import { register } from "../actions";
 import { connect } from "react-redux";
@@ -82,6 +83,37 @@ class Register extends React.Component {
     const { handleChange } = this;
     return (
       <div className="regDiv">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <NavLink
+            style={{ textDecoration: "none", marginLeft: "3%", color: "black" }}
+            exact
+            to="/"
+          >
+            {" "}
+            <div>
+              <i class="fas fa-home fa-2x"></i>{" "}
+            </div>
+          </NavLink>
+          <div>
+            <p>Create Account</p>
+            <p>
+              Already have an account?{" "}
+              <NavLink
+                style={{ textDecoration: "none", color: "black" }}
+                to="/logIn"
+              >
+                login
+              </NavLink>
+            </p>
+          </div>
+
+          <NavLink
+            style={{ textDecoration: "none", color: "black" }}
+            to="/logIn"
+          >
+            <i className="fas fa-sign-in-alt fa-2x"></i>
+          </NavLink>
+        </div>
         <FormRegister onSubmit={this.register}>
           <FormGroup>
             <InInput
