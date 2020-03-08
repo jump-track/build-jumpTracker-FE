@@ -7,10 +7,10 @@ import "./Register.css";
 import { Link } from "react-router-dom";
 
 const InInput = styled.input`
-  width: 20%;
-  height: 40px;
-  opacity: 0.5;
+  width: 50%;
+  height: 2em;
   text-align: center;
+  border-radius: 10px;
   @media (max-width: 968px) {
     width: 50%;
     text-align: center;
@@ -21,13 +21,14 @@ const InInput = styled.input`
 `;
 
 const IForm = styled.form`
-  margin: 5% 0 0 5%;
+  margin-top: 5%;
   text-align: center;
 `;
 
 const IButton = styled.button`
-  width: 20%;
-  height: 40px;
+  width: 50%;
+  height: 2em;
+  border-radius: 10px;
   color: "#955251";
   background: #838487;
   color: white;
@@ -68,6 +69,9 @@ class LogIn extends React.Component {
     const { username, password } = this.state.credentials;
     return (
       <div className="loginDiv">
+        <div>
+          <i className="fas fa-user fa-5x"></i>
+        </div>
         <IForm onSubmit={this.login} disabled={!this.isValid()}>
           <FormGroup>
             <InInput
@@ -100,8 +104,9 @@ class LogIn extends React.Component {
               color: "#955251",
               textAlign: "center",
               background: "white",
-              padding: "1%",
+              padding: "3%",
               border: "1px solid black",
+              borderRadius: "10px",
               textDecoration: "none"
             }}
             to="/register"
@@ -119,7 +124,4 @@ const mapStateToProps = ({ loggingIn, error }) => ({
   loggingIn
 });
 
-export default connect(
-  mapStateToProps,
-  { login }
-)(LogIn);
+export default connect(mapStateToProps, { login })(LogIn);

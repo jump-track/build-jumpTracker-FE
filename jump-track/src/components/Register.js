@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const InInput = styled.input`
-  width: 20%;
-  height: 40px;
-  opacity: 0.5;
+  width: 30%;
+  height: 2em;
+  border-radius: 10px;
   text-align: center;
   @media (max-width: 968px) {
     width: 50%;
@@ -19,13 +19,14 @@ const InInput = styled.input`
 `;
 
 const FormRegister = styled.form`
-  margin: 3% 0 0 3%;
+  margin: 5%;
   text-align: center;
 `;
 
 const TButton = styled.button`
-  width: 20%;
-  height: 40px;
+  width: 30%;
+  height: 2em;
+  border-radius: 10px;
   background: #838487;
   color: white;
 `;
@@ -123,7 +124,7 @@ class Register extends React.Component {
             />
           </FormGroup>
           <TButton disabled={!this.isValid()} size="lg" color="secondary">
-            Submit
+            Create Account
           </TButton>
         </FormRegister>
       </div>
@@ -136,7 +137,4 @@ const mapStateToProps = ({ signingUp, error }) => ({
   signingUp
 });
 
-export default connect(
-  mapStateToProps,
-  { register }
-)(Register);
+export default connect(mapStateToProps, { register })(Register);

@@ -2,16 +2,24 @@ button {
   width: 20%;
 }
 .loginDiv {
-  text-align: center;
+  margin-left: 45%;
   font-size: 24px;
-  height: 680px;
+  height: auto;
+  width: 40%;
+  height: auto;
+  border: 1px solid red;
 }
 
 .regDiv {
   text-align: center;
   font-size: 24px;
-  height: 680px;
+  height: auto;
+  padding-bottom: 5%;
 }
 .regDiv {
-  margin-top: 30px;
+  margin-top: 5%;
+}
+
+i.fas {
+  text-align: center;
 }
