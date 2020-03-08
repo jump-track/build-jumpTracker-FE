@@ -83,7 +83,13 @@ class Register extends React.Component {
     const { handleChange } = this;
     return (
       <div className="regDiv">
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "auto"
+          }}
+        >
           <NavLink
             style={{ textDecoration: "none", marginLeft: "3%", color: "black" }}
             exact

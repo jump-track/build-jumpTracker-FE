@@ -2,12 +2,11 @@ button {
   width: 20%;
 }
 .loginDiv {
-  margin-left: 45%;
   font-size: 24px;
   height: auto;
-  width: 40%;
+  width: 100%;
   height: auto;
-  border: 1px solid red;
+  text-align: center;
 }
 
 .regDiv {
@@ -17,9 +16,5 @@ button {
   padding-bottom: 5%;
 }
 .regDiv {
-  margin-top: 5%;
-}
-
-i.fas {
-  text-align: center;
+  margin-top: 3%;
 }
