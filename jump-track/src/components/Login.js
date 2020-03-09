@@ -12,12 +12,12 @@ const InInput = styled.input`
   height: 2em;
   text-align: center;
   border-radius: 10px;
-  @media (max-width: 968px) {
+  @media (max-width: 888px) {
     width: 50%;
     text-align: center;
   }
   @media (max-width: 668px) {
-    width: 200px;
+    width: 70%;
   }
 `;
 
@@ -38,6 +38,12 @@ const IButton = styled.button`
     color: black;
     cursor: pointer;
   }
+  @media (max-width: 888px) {
+    width: 50%;
+  }
+  @media (max-width: 668px) {
+    width: 70%;
+  }
 `;
 const IButton1 = styled.button`
   margin-top: 3%;
@@ -50,6 +56,12 @@ const IButton1 = styled.button`
     background-color: #088a29;
     color: white;
     cursor: pointer;
+  }
+  @media (max-width: 888px) {
+    width: 50%;
+  }
+  @media (max-width: 668px) {
+    width: 70%;
   }
 `;
 

@@ -11,11 +11,11 @@ const InInput = styled.input`
   height: 2em;
   border-radius: 10px;
   text-align: center;
-  @media (max-width: 968px) {
+  @media (max-width: 888px) {
     width: 50%;
   }
   @media (max-width: 668px) {
-    width: 200px;
+    width: 70%;
   }
 `;
 
@@ -34,6 +34,12 @@ const TButton = styled.button`
     background-color: white;
     color: black;
     cursor: pointer;
+  }
+  @media (max-width: 888px) {
+    width: 50%;
+  }
+  @media (max-width: 668px) {
+    width: 70%;
   }
 `;
 

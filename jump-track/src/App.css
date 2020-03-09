@@ -1,47 +1,6 @@
-/* body {
-  background-image: url("https://images.pexels.com/photos/1935856/pexels-photo-1935856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
 h1 {
   text-align: center;
   text-shadow: 2px 2px #5a7a80;
-}
-.navLinks a {
-  margin-left: 3%;
-  color: #2e4a62;
-  text-shadow: 0.5px 0.5px #5a7a80;
-  font-size: 1.5em;
-}
-.navLinks {
-  animation-name: text-focus-in;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-  text-align: right;
-  /* background: rgba(0, 0, 0, 0.811); */
-  padding: 1% 5% 1% 0;
-  width: 100%;
-  /* border-radius: 10px; */
-  /* border: 1px solid rgb(243, 131, 4); */
-}
-@media only screen and (max-width: 668px) {
-  .navLinks {
-    width: 100%;
-    font-size: 14px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .navLinks {
-    width: 100%;
-    font-size: 10px;
-  }
-}
-@media only screen and (max-width: 550px) {
-  .navLinks {
-    width: 100%;
-    font-size: 8px;
-  }
 }
 
 .appDiv {
