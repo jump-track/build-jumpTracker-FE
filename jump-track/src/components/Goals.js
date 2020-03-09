@@ -12,15 +12,16 @@ import myImage2 from "./image/delete-button.png";
 import myImage3 from "./image/send.png";
 
 const GoalsMain = styled.div`
-  height: 760px;
   position: relative;
-  @media (max-width: 968px) {
-    // flex-wrap: wrap;
+  @media (max-width: 888px) {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (max-width: 668px) {
-    flex-direction: column;
+    display: flex;
+    width: 100%;
   }
 `;
 const GoalsFlex = styled.div`
@@ -28,7 +29,19 @@ const GoalsFlex = styled.div`
   margin-left: 5%;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 888px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 668px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
+
 const GoalsLower = styled.section`
   background: #9896a4;
   opacity: 0.8;
@@ -40,27 +53,33 @@ const GoalsLower = styled.section`
   border-radius: 5%;
   height: auto;
   margin: 2%;
-  @media (max-width: 968px) {
-    width: 50%;
+  @media (max-width: 888px) {
+    width: 100%;
   }
-  @media (max-width: 868px) {
+  @media (max-width: 668px) {
     width: 100%;
   }
 `;
 
 const GoalsUpper = styled.div`
   width: 100%;
+  @media (max-width: 888px) {
+    width: 70%;
+  }
+  @media (max-width: 668px) {
+    width: 70%;
+  }
 `;
 const InInput = styled.input`
   width: 80%;
   border-radius: 10px;
   text-align: center;
   height: 40px;
-  @media (max-width: 968px) {
-    width: 100%;
+  @media (max-width: 888px) {
+    width: 70%;
   }
   @media (max-width: 668px) {
-    width: 200px;
+    width: 70%;
   }
 `;
 
@@ -171,17 +190,6 @@ class Goals extends React.Component {
               </FormGroup>
               <Button className="signBtn">Set Goal</Button>
             </form>
-            <div
-              style={{
-                position: "fixed",
-                width: "600px",
-                height: "300px",
-                bottom: 0,
-                right: 0
-              }}
-            >
-              <MyGraph />
-            </div>
           </GoalsUpper>
           <GoalsFlex>
             {this.props.goals &&
@@ -234,6 +242,17 @@ class Goals extends React.Component {
                 </GoalsLower>
               ))}
           </GoalsFlex>
+          <div
+            style={{
+              position: "fixed",
+              width: "600px",
+              height: "300px",
+              bottom: 0,
+              right: 0
+            }}
+          >
+            <MyGraph />
+          </div>
         </GoalsMain>
       </div>
     );
