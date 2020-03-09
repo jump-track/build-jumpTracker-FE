@@ -51,3 +51,6 @@ h1 {
   box-sizing: border-box;
   max-width: 1480px;
 }
+input {
+  outline: none;
+}

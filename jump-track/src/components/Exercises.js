@@ -11,7 +11,7 @@ const InnerDiv = styled.div`
   color: #034f84;
   padding: 2%;
   margin: 2%;
-  width: 40%;
+  width: 35%;
   opacity: 0.8;
   border-radius: 10px;
   @media (max-width: 968px) {
@@ -27,6 +27,7 @@ const OuterDiv = styled.div`
   flex-wrap: wrap;
   text-align: center;
   color: red;
+  margin-left: 5%;
 `;
 const InInput = styled.input`
   width: 80%;
