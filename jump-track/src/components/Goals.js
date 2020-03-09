@@ -25,6 +25,7 @@ const GoalsMain = styled.div`
 `;
 const GoalsFlex = styled.div`
   width: 100%;
+  margin-left: 5%;
   display: flex;
   flex-wrap: wrap;
 `;

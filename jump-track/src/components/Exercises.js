@@ -1,5 +1,6 @@
 import React from "react";
 import { FormGroup } from "reactstrap";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { exercise, exerciseGet } from "../actions";
 import "./Exercises.css";
@@ -31,6 +32,7 @@ const InInput = styled.input`
   width: 80%;
   height: 40px;
   opacity: 0.5;
+  border-radius: 10px;
   text-align: center;
   @media (max-width: 968px) {
     width: 90%;
@@ -44,7 +46,7 @@ const InInput = styled.input`
 const IButton = styled.button`
   width: 40%;
   background: #838487;
-  border-radius: 5%;
+  border-radius: 10px;
   height: 35px;
   color: white;
   @media (max-width: 968px) {
@@ -110,29 +112,63 @@ class Exercises extends React.Component {
     const { exercise } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
-      <div className="exerciseDiv">
-        <OuterDiv>
-          {this.props.goals.map(item => (
-            <InnerDiv key={item.id} className="exerciseInner">
-              <p>{item.exercises}</p> <p>{item.date}</p>
-            </InnerDiv>
-          ))}
-        </OuterDiv>
-        <IForm onSubmit={e => handleSubmit(e)}>
-          <FormGroup>
-            {/* <button className="btn">Back</button> */}
-            <InInput
-              size="lg"
-              type="text"
-              value={exercise}
-              name="exercise"
-              onChange={handleChange}
-              placeholder="enter your exercise"
-            />
-          </FormGroup>
+      <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "auto",
+            marginTop: "3%",
+            textAlign: "center"
+          }}
+        >
+          <NavLink
+            style={{
+              textDecoration: "none",
+              marginLeft: "3%",
+              color: "black"
+            }}
+            exact
+            to="/protected"
+          >
+            {" "}
+            <div>
+              <i className="fas fa-home fa-2x"></i>{" "}
+            </div>
+          </NavLink>
 
-          <IButton>Update</IButton>
-        </IForm>
+          <NavLink
+            style={{ textDecoration: "none", color: "black" }}
+            to="/register"
+          >
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+          </NavLink>
+        </div>
+
+        <div className="exerciseDiv">
+          <OuterDiv>
+            {this.props.goals.map(item => (
+              <InnerDiv key={item.id} className="exerciseInner">
+                <p>{item.exercises}</p> <p>{item.date}</p>
+              </InnerDiv>
+            ))}
+          </OuterDiv>
+          <IForm onSubmit={e => handleSubmit(e)}>
+            <FormGroup>
+              {/* <button className="btn">Back</button> */}
+              <InInput
+                size="lg"
+                type="text"
+                value={exercise}
+                name="exercise"
+                onChange={handleChange}
+                placeholder="enter your exercise"
+              />
+            </FormGroup>
+
+            <IButton>Update</IButton>
+          </IForm>
+        </div>
       </div>
     );
   }
@@ -144,7 +180,4 @@ const mapStateToProps = ({ updatingExercise, error, goals }) => ({
   goals
 });
 
-export default connect(
-  mapStateToProps,
-  { exercise, exerciseGet }
-)(Exercises);
+export default connect(mapStateToProps, { exercise, exerciseGet })(Exercises);
