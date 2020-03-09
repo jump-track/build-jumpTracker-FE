@@ -28,6 +28,15 @@ const OuterDiv = styled.div`
   text-align: center;
   color: red;
   margin-left: 5%;
+  @media (max-width: 968px) {
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+  }
+  @media (max-width: 668px) {
+    width: 100%;
+    margin-top: 5%;
+  }
 `;
 const InInput = styled.input`
   width: 80%;
@@ -54,13 +63,13 @@ const IButton = styled.button`
     width: 90%;
     margin-bottom: 25%;
     height: 50px;
-    // color: "#955251";
+    color: white;
   }
   @media (max-width: 668px) {
     width: 90%;
     margin-bottom: 25%;
     height: 50px;
-    color: gray;
+    color: white;
   }
 `;
 const IForm = styled.form`
@@ -72,9 +81,11 @@ const IForm = styled.form`
   width: 400px;
   @media (max-width: 968px) {
     margin-left: 2%;
+    text-align: center;
   }
   @media (max-width: 668px) {
-    margin-left: 2%;
+    // margin-left: 2%;
+    text-align: center;
   }
 `;
 class Exercises extends React.Component {
@@ -139,6 +150,7 @@ class Exercises extends React.Component {
           </NavLink>
 
           <NavLink
+            className="margin-right"
             style={{ textDecoration: "none", color: "black" }}
             to="/register"
           >

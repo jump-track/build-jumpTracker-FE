@@ -16,11 +16,12 @@ const GoalsMain = styled.div`
   @media (max-width: 888px) {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 668px) {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
   }
 `;
@@ -30,14 +31,17 @@ const GoalsFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
   @media (max-width: 888px) {
+    margin-top: 5%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
 
   @media (max-width: 668px) {
+    margin-top: 5%;
     width: 100%;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 `;
@@ -54,10 +58,10 @@ const GoalsLower = styled.section`
   height: auto;
   margin: 2%;
   @media (max-width: 888px) {
-    width: 100%;
+    width: 40%;
   }
   @media (max-width: 668px) {
-    width: 100%;
+    width: 40%;
   }
 `;
 
@@ -160,6 +164,7 @@ class Goals extends React.Component {
             </NavLink>
 
             <NavLink
+              className="margin-right"
               style={{ textDecoration: "none", color: "black" }}
               to="/register"
             >
@@ -251,7 +256,9 @@ class Goals extends React.Component {
               right: 0
             }}
           >
-            <MyGraph />
+            <div class="graph">
+              <MyGraph />
+            </div>
           </div>
         </GoalsMain>
       </div>
