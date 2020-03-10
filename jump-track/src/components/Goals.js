@@ -144,9 +144,10 @@ class Goals extends React.Component {
               display: "flex",
               justifyContent: "space-between",
               height: "auto",
-              paddingTop: "3%",
+              paddingTop: "1.5%",
+              paddingBottom: "1.6%",
               textAlign: "center",
-              backgroundColor: "red"
+              backgroundColor: "#888281"
             }}
           >
             <NavLink

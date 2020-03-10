@@ -23,7 +23,7 @@ const InInput = styled.input`
 `;
 
 const FormRegister = styled.form`
-  margin: 5%;
+  margin: 2%;
   text-align: center;
 `;
 
@@ -109,7 +109,7 @@ class Register extends React.Component {
             height: "auto",
             paddingTop: "1.5%",
             paddingBottom: "1.5%",
-            backgroundColor: "red"
+            backgroundColor: "#888281"
           }}
         >
           <NavLink
@@ -119,7 +119,7 @@ class Register extends React.Component {
           >
             {" "}
             <div>
-              <i class="fas fa-home fa-2x"></i>{" "}
+              <i className="fas fa-home fa-2x"></i>{" "}
             </div>
           </NavLink>
           <div style={{ display: "flex" }}>
@@ -143,6 +143,7 @@ class Register extends React.Component {
           </NavLink>
         </div>
         <div style={{ marginTop: "3%" }}>
+          <i id="fasUser" className="fas fa-user fa-4x"></i>
           <p>Create Account</p>
           <p>
             Already have an account?{" "}

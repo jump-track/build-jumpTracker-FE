@@ -25,7 +25,7 @@ const InInput = styled.input`
 `;
 
 const IForm = styled.form`
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
 `;
 
@@ -118,7 +118,7 @@ class LogIn extends React.Component {
             height: "auto",
             paddingTop: "1.5%",
             paddingBottom: "1.6%",
-            backgroundColor: "red",
+            backgroundColor: "#888281",
             textAlign: "center"
           }}
         >
@@ -153,13 +153,9 @@ class LogIn extends React.Component {
           </NavLink>
         </div>
         <div className="loginDiv">
-          <div>
-            <i
-              className="fas fa-user fa-4x"
-              style={{ textAlign: "center" }}
-            ></i>
-          </div>
-          <div>
+          <i id="fasUser" className="fas fa-user fa-4x"></i>
+
+          <div style={{ marginTop: "1%" }}>
             <p>Log into Jump-Track</p>
             <p>
               Don't have an account?{" "}
