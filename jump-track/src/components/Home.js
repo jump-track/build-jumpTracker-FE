@@ -48,7 +48,8 @@ const Home = () => {
             style={{
               color: "#672E3B",
               textDecoration: "none",
-              textShadow: "1px 1px #5a7a80"
+              textShadow: "1px 1px #5a7a80",
+              outline: "none"
             }}
             to="/logIn"
           >
@@ -60,7 +61,8 @@ const Home = () => {
             style={{
               color: "#672E3B",
               textDecoration: "none",
-              textShadow: "1px 1px #5a7a80"
+              textShadow: "1px 1px #5a7a80",
+              outline: "none"
             }}
             to="/register"
           >

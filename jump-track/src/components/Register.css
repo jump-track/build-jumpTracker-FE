@@ -5,6 +5,7 @@ button {
   font-size: 24px;
   height: auto;
   width: 100%;
+  margin-top: 3%;
   height: auto;
   text-align: center;
 }
@@ -13,8 +14,15 @@ button {
   text-align: center;
   font-size: 24px;
   height: auto;
-  padding-bottom: 5%;
 }
-.regDiv {
-  margin-top: 3%;
+
+@media only screen and (max-width: 888px) {
+  .register-icon {
+    padding-right: 7%;
+  }
+}
+@media only screen and (max-width: 668px) {
+  .register-icon {
+    padding-right: 7%;
+  }
 }

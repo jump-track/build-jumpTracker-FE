@@ -11,13 +11,16 @@ const InInput = styled.input`
   width: 30%;
   height: 2em;
   text-align: center;
+  outline: none;
   border-radius: 10px;
   @media (max-width: 888px) {
     width: 50%;
+    outline: none;
     text-align: center;
   }
   @media (max-width: 668px) {
     width: 70%;
+    outline: none;
   }
 `;
 
@@ -29,6 +32,7 @@ const IForm = styled.form`
 const IButton = styled.button`
   width: 30%;
   height: 2em;
+  outline: none;
   border-radius: 10px;
   color: "#955251";
   background: #838487;
@@ -40,15 +44,18 @@ const IButton = styled.button`
   }
   @media (max-width: 888px) {
     width: 50%;
+    outline: none;
   }
   @media (max-width: 668px) {
     width: 70%;
+    outline: none;
   }
 `;
 const IButton1 = styled.button`
   margin-top: 3%;
   width: 20%;
   height: 2em;
+  outline: none;
   border-radius: 10px;
   color: "#955251";
   color: white;
@@ -59,9 +66,11 @@ const IButton1 = styled.button`
   }
   @media (max-width: 888px) {
     width: 50%;
+    outline: none;
   }
   @media (max-width: 668px) {
     width: 70%;
+    outline: none;
   }
 `;
 
@@ -107,7 +116,9 @@ class LogIn extends React.Component {
             display: "flex",
             justifyContent: "space-between",
             height: "auto",
-            marginTop: "3%",
+            paddingTop: "1.5%",
+            paddingBottom: "1.6%",
+            backgroundColor: "red",
             textAlign: "center"
           }}
         >
@@ -121,20 +132,20 @@ class LogIn extends React.Component {
               <i className="fas fa-home fa-2x"></i>{" "}
             </div>
           </NavLink>
-          <div>
-            <p>Log into Jump-Track</p>
-            <p>
-              Don't have an account?{" "}
-              <NavLink
-                style={{ textDecoration: "none", color: "black" }}
-                to="/register"
-              >
-                register
-              </NavLink>
-            </p>
+          <div style={{ display: "flex" }}>
+            <h4>Jump</h4>
+            <img
+              className="homeImg"
+              src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
+              alt="drawing"
+              width="50"
+              height="50"
+            />{" "}
+            <h4>Tracker</h4>
           </div>
 
           <NavLink
+            className="register-icon"
             style={{ textDecoration: "none", color: "black" }}
             to="/register"
           >
@@ -147,6 +158,18 @@ class LogIn extends React.Component {
               className="fas fa-user fa-4x"
               style={{ textAlign: "center" }}
             ></i>
+          </div>
+          <div>
+            <p>Log into Jump-Track</p>
+            <p>
+              Don't have an account?{" "}
+              <NavLink
+                style={{ textDecoration: "none", color: "black" }}
+                to="/register"
+              >
+                register
+              </NavLink>
+            </p>
           </div>
           <IForm onSubmit={this.login} disabled={!this.isValid()}>
             <FormGroup>

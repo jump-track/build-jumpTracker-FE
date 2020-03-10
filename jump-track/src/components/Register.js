@@ -11,11 +11,14 @@ const InInput = styled.input`
   height: 2em;
   border-radius: 10px;
   text-align: center;
+  outline: none;
   @media (max-width: 888px) {
     width: 50%;
+    outline: none;
   }
   @media (max-width: 668px) {
     width: 70%;
+    outline: none;
   }
 `;
 
@@ -30,6 +33,7 @@ const TButton = styled.button`
   border-radius: 10px;
   background: #838487;
   color: white;
+  outline: none;
   &:hover {
     background-color: white;
     color: black;
@@ -37,9 +41,11 @@ const TButton = styled.button`
   }
   @media (max-width: 888px) {
     width: 50%;
+    outline: none;
   }
   @media (max-width: 668px) {
     width: 70%;
+    outline: none;
   }
 `;
 
@@ -100,7 +106,10 @@ class Register extends React.Component {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            height: "auto"
+            height: "auto",
+            paddingTop: "1.5%",
+            paddingBottom: "1.5%",
+            backgroundColor: "red"
           }}
         >
           <NavLink
@@ -113,25 +122,37 @@ class Register extends React.Component {
               <i class="fas fa-home fa-2x"></i>{" "}
             </div>
           </NavLink>
-          <div>
-            <p>Create Account</p>
-            <p>
-              Already have an account?{" "}
-              <NavLink
-                style={{ textDecoration: "none", color: "black" }}
-                to="/logIn"
-              >
-                login
-              </NavLink>
-            </p>
+          <div style={{ display: "flex" }}>
+            <h4>Jump</h4>
+            <img
+              className="homeImg"
+              src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
+              alt="drawing"
+              width="50"
+              height="50"
+            />{" "}
+            <h4>Tracker</h4>
           </div>
 
           <NavLink
+            className="register-icon"
             style={{ textDecoration: "none", color: "black" }}
             to="/logIn"
           >
             <i className="fas fa-sign-in-alt fa-2x"></i>
           </NavLink>
+        </div>
+        <div style={{ marginTop: "3%" }}>
+          <p>Create Account</p>
+          <p>
+            Already have an account?{" "}
+            <NavLink
+              style={{ textDecoration: "none", color: "black" }}
+              to="/logIn"
+            >
+              login
+            </NavLink>
+          </p>
         </div>
         <FormRegister onSubmit={this.register}>
           <FormGroup>

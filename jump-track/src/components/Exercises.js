@@ -27,7 +27,7 @@ const OuterDiv = styled.div`
   flex-wrap: wrap;
   text-align: center;
   color: red;
-  margin-left: 5%;
+  padding-left: 5%;
   @media (max-width: 968px) {
     width: 100%;
     margin-top: 5%;
@@ -130,8 +130,10 @@ class Exercises extends React.Component {
             display: "flex",
             justifyContent: "space-between",
             height: "auto",
-            marginTop: "3%",
-            textAlign: "center"
+            paddingTop: "3%",
+            paddingBottom: "2%",
+            textAlign: "center",
+            backgroundColor: "red"
           }}
         >
           <NavLink
@@ -148,7 +150,17 @@ class Exercises extends React.Component {
               <i className="fas fa-home fa-2x"></i>{" "}
             </div>
           </NavLink>
-
+          <div style={{ display: "flex" }}>
+            <h4>Jump</h4>
+            <img
+              className="homeImg"
+              src="https://image.flaticon.com/icons/png/512/1419/1419343.png"
+              alt="drawing"
+              width="50"
+              height="50"
+            />{" "}
+            <h4>Tracker</h4>
+          </div>
           <NavLink
             className="margin-right"
             style={{ textDecoration: "none", color: "black" }}
